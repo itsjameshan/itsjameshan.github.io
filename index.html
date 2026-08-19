@@ -1,1 +1,420 @@
-Hello Gary
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>James Han, Ph.D. — AI Engineer &amp; Data Scientist</title>
+<meta name="description" content="James Han, Ph.D. — AI engineer and data scientist: LLM/GenAI applications (RAG, agentic workflows), computer vision (YOLO), and 10+ years of production machine learning. US patent holder, 7 SCI publications.">
+<meta property="og:title" content="James Han, Ph.D. — AI Engineer &amp; Data Scientist">
+<meta property="og:description" content="LLM/GenAI, computer vision, and 10+ years of production ML. US patent holder.">
+<style>
+  :root{
+    --accent:#1F4E79; --accent-light:#2E6DA4; --ink:#1c2733; --muted:#5b6b7b;
+    --line:#dde5ec; --chip-bg:#eef4f9; --bg:#ffffff; --soft:#f7fafc;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,
+      "PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+    color:var(--ink); background:var(--bg); line-height:1.6; font-size:16px;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:0 24px;}
+
+  /* Nav */
+  nav{
+    position:sticky; top:0; z-index:10; background:rgba(255,255,255,.94);
+    backdrop-filter:blur(6px); border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex; align-items:center; gap:18px; height:52px; overflow-x:auto; white-space:nowrap;}
+  nav .brand{font-weight:700; color:var(--accent); margin-right:auto;}
+  nav a{color:var(--muted); text-decoration:none; font-size:14px;}
+  nav a:hover{color:var(--accent);}
+  nav a.zh{font-weight:600; color:var(--accent);}
+
+  /* Header */
+  header{padding:56px 0 32px; background:linear-gradient(180deg,var(--soft),var(--bg));}
+  h1{font-size:40px; letter-spacing:.5px; color:var(--accent); line-height:1.15;}
+  .tagline{font-size:18px; color:var(--ink); margin-top:8px; font-weight:500;}
+  .contact{margin-top:14px; font-size:15px; color:var(--muted);}
+  .contact a{color:var(--accent-light); text-decoration:none;}
+  .contact a:hover{text-decoration:underline;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:20px;}
+  .chip{
+    background:var(--chip-bg); color:var(--accent); border:1px solid #d5e3f0;
+    padding:4px 12px; border-radius:999px; font-size:13.5px; font-weight:600;
+  }
+
+  /* Header photo */
+  .header-flex{display:flex; align-items:center; gap:36px;}
+  .header-text{flex:1; min-width:0;}
+  .portrait{flex:0 0 auto; text-align:center;}
+  .portrait img{
+    width:212px; aspect-ratio:4/5; object-fit:cover; object-position:50% 10%; border-radius:14px; display:block;
+    box-shadow:0 6px 20px rgba(31,78,121,.18); border:1px solid var(--line);
+  }
+  .portrait figcaption{font-size:12.5px; color:var(--muted); margin-top:8px;}
+
+  /* Sections */
+  section{padding:34px 0 6px;}
+  h2{
+    font-size:22px; color:var(--accent); text-transform:uppercase; letter-spacing:1.5px;
+    padding-bottom:8px; border-bottom:2px solid var(--accent); margin-bottom:22px;
+  }
+  h2 .zh-sub{font-size:15px; letter-spacing:0; text-transform:none; color:var(--muted); font-weight:500;}
+
+  /* Experience entries */
+  .entry{border-left:3px solid var(--line); padding:2px 0 18px 20px; margin-left:4px; position:relative;}
+  .entry::before{
+    content:""; position:absolute; left:-8px; top:8px; width:13px; height:13px;
+    border-radius:50%; background:var(--bg); border:3px solid var(--accent-light);
+  }
+  .entry h3{font-size:17.5px; color:var(--ink);}
+  .entry .org{color:var(--muted); font-size:15px; margin:2px 0 8px;}
+  .entry .org b{color:var(--ink); font-weight:600;}
+  .dates{
+    float:right; font-size:13.5px; color:var(--accent-light); font-weight:600;
+    background:var(--chip-bg); padding:2px 10px; border-radius:6px; margin-left:12px;
+  }
+  ul{list-style:none;}
+  ul li{padding-left:18px; position:relative; margin-bottom:7px; font-size:15px; color:#2c3a48;}
+  ul li::before{content:"▸"; position:absolute; left:0; color:var(--accent-light);}
+
+  /* Skills */
+  .skill-row{margin-bottom:10px; font-size:15px;}
+  .skill-row b{color:var(--accent);}
+
+  /* Projects */
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .card{
+    border:1px solid var(--line); border-radius:10px; padding:18px 18px 14px;
+    background:var(--soft); transition:box-shadow .15s;
+  }
+  .card:hover{box-shadow:0 4px 14px rgba(31,78,121,.10);}
+  .card h3{font-size:16px; color:var(--accent); margin-bottom:6px;}
+  .card p{font-size:14.5px; color:#2c3a48; margin-bottom:8px;}
+  .card a{font-size:13.5px; color:var(--accent-light); text-decoration:none; font-weight:600;}
+  .card a:hover{text-decoration:underline;}
+
+  /* Publications */
+  .pub{font-size:14.5px; color:#2c3a48; margin-bottom:8px; padding-left:18px; position:relative;}
+  .pub::before{content:"▸"; position:absolute; left:0; color:var(--accent-light);}
+  .pub i{color:var(--muted);}
+
+  /* Chinese section */
+  .zh-divider{
+    margin:48px 0 0; padding:26px 0; background:var(--accent); color:#fff; text-align:center;
+  }
+  .zh-divider h2{
+    border:none; color:#fff; margin:0; padding:0; letter-spacing:6px; font-size:24px;
+  }
+  .zh-divider p{color:#cfe0ef; font-size:14px; margin-top:6px;}
+  #zh section{padding-top:30px;}
+
+  footer{
+    margin-top:56px; padding:26px 0 40px; border-top:1px solid var(--line);
+    font-size:13.5px; color:var(--muted); text-align:center;
+  }
+  footer a{color:var(--accent-light); text-decoration:none;}
+
+  @media (max-width:640px){
+    h1{font-size:30px;}
+    .header-flex{flex-direction:column; align-items:flex-start; gap:22px;}
+    .portrait{align-self:center;}
+    .portrait img{width:180px;}
+    .grid{grid-template-columns:1fr;}
+    .dates{float:none; display:inline-block; margin:0 0 6px;}
+    header{padding:40px 0 26px;}
+  }
+  @media print{
+    nav, .zh-divider p{display:none;}
+    body{font-size:12px;}
+    header{padding:10px 0;}
+    .card:hover{box-shadow:none;}
+    a{color:var(--ink); text-decoration:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">James Han</span>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#publications">Publications</a>
+    <a href="#zh" class="zh">中文简历</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap header-flex">
+  <div class="header-text">
+    <h1>JAMES HAN, Ph.D.</h1>
+    <p class="tagline">AI Engineer &amp; Data Scientist · LLM/GenAI Applications · Computer Vision · Machine Learning</p>
+    <p class="contact">
+      <a href="mailto:itsjameschan@gmail.com">itsjameschan@gmail.com</a> &nbsp;·&nbsp;
+      <a href="https://github.com/itsjameshan" target="_blank" rel="noopener">github.com/itsjameshan</a> &nbsp;·&nbsp;
+      <a href="https://chengchou.pythonanywhere.com" target="_blank" rel="noopener">Live AI demo</a>
+    </p>
+    <div class="chips">
+      <span class="chip">10+ yrs AI &amp; Data Science</span>
+      <span class="chip">LLM · RAG · Agentic AI</span>
+      <span class="chip">30 production models shipped</span>
+      <span class="chip">US invention patent</span>
+      <span class="chip">7 SCI publications</span>
+    </div>
+  </div>
+  <figure class="portrait">
+    <img src="avatar.jpg" alt="James Han speaking at Potato Expo 2020"
+      onerror="if(!this.dataset.f){this.dataset.f=1;this.src='James_Han_Potato_Expo_2020__National_Potato_Council_Annual_Meeting__Spudman.jpg';}else{this.closest('figure').style.display='none';}">
+    <figcaption>Speaking at Potato Expo 2020</figcaption>
+  </figure>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section id="about">
+    <h2>Summary</h2>
+    <p style="font-size:15.5px; color:#2c3a48;">
+      AI engineer and data scientist with 10+ years of machine learning experience. Current work centers on
+      LLM/GenAI applications — RAG pipelines, prompt engineering, and agentic AI workflows (OpenAI &amp; Anthropic APIs,
+      Claude Code, Codex) — and computer vision: YOLO object detection, EfficientNet classification, and real-time
+      counting systems. This sits on a decade of shipping production ML in the US agri-tech industry (The Climate
+      Corporation/Monsanto, DuPont Pioneer, Lindsay Corporation, CIBO Technologies): 30 production models on a
+      commercial SaaS platform, CNN imagery models deployed on Azure, and a model shipped inside a Climate product.
+      US invention patent holder with 7 SCI publications and a strong foundation in statistics and experimentation:
+      A/B testing, mixed models, and model evaluation.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Core Skills</h2>
+    <div class="skill-row"><b>LLM / GenAI:</b> LLM application development, RAG, prompt engineering, OpenAI &amp; Anthropic APIs, agentic AI workflows (Claude Code, Codex, Cursor)</div>
+    <div class="skill-row"><b>Deep Learning &amp; CV:</b> PyTorch, TensorFlow/Keras, CNN, EfficientNet, YOLOv8/YOLOv12, SAHI, SAM, OpenCV — object detection, counting, image classification</div>
+    <div class="skill-row"><b>Machine Learning:</b> XGBoost/LightGBM, gradient boosting, random forest, logistic regression, SVM, KNN, PCA, naive Bayes · model evaluation &amp; error analysis</div>
+    <div class="skill-row"><b>Programming &amp; Data:</b> Python, SQL, R, SAS, Java, JavaScript, Bash, Git, Scala · MySQL, PostgreSQL · Spark, Hadoop, Linux</div>
+    <div class="skill-row"><b>Statistics &amp; Experimentation:</b> A/B testing, mixed models, variance component analysis, EDA, sensitivity analysis</div>
+    <div class="skill-row"><b>Cloud &amp; Visualization:</b> AWS (EC2, S3, EBS), Azure, Tableau, QGIS, ggplot, Leaflet.js, d3.js</div>
+  </section>
+
+  <section id="experience">
+    <h2>Professional Experience</h2>
+
+    <div class="entry">
+      <span class="dates">Oct 2023 – Present</span>
+      <h3>Lecturer, AI &amp; Data Science</h3>
+      <p class="org"><b>Kunming University</b> · China</p>
+      <ul>
+        <li>Teach neural networks &amp; deep learning, Python, Linux shell, and database courses; run AI engineering practicums where student teams take real datasets through the full cycle: cleaning → modeling → evaluation → presentation.</li>
+        <li>Built a stadium crowd-analytics computer vision system (YOLOv12 and YOLOv8 + SAHI head detection and counting; dual-head EfficientNet-B0 age/gender classification); led a student team through cleaning, annotation, and augmentation of 20,000+ images (97% annotation accuracy) to a real-time counting system with a web dashboard.</li>
+        <li>Designed a 7-model machine learning framework for tobacco quality characterization; curated and quality-controlled large public CV datasets (CrowdHuman, ShanghaiTech, NWPU-Crowd).</li>
+        <li>Built and deployed a smart-agriculture web platform with a live online demo (YOLO-based blueberry ripeness detection plus weather alerting); maintain open-source projects in computer vision, crop modeling, and audio/speech processing.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <span class="dates">Aug 2021 – Oct 2023</span>
+      <h3>Quantitative Agricultural Scientist</h3>
+      <p class="org"><b>CIBO Technologies</b> · St. Louis, MO, USA</p>
+      <ul>
+        <li>Owned data collection, cleaning, and quality control for CIBO's carbon-credit validation program under Verra, the body defining global sustainability standards for agriculture and environment.</li>
+        <li>Ran model sensitivity analyses in Python across management factors (tillage definitions and depth, planting/harvest dates, fertilizer) to quantify drivers of model output and guide program decisions.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <span class="dates">Aug 2018 – Jul 2021</span>
+      <h3>FieldNET Advisor Solutions Specialist (Data Scientist)</h3>
+      <p class="org"><b>Lindsay Corporation</b> · Omaha, NE, USA</p>
+      <ul>
+        <li>Developed and maintained 30 production crop models powering FieldNET Advisor, a commercial irrigation-scheduling platform combining crop modeling with satellite imagery, covering corn, soybean, potato, cotton, winter wheat, alfalfa, hemp, and more.</li>
+        <li>Built and deployed a CNN model on Azure to detect crop growth stages (emergence, flowering) from field sensor imagery.</li>
+        <li>Co-inventor on US invention patent <i>System and Method for Adjusting Irrigation System Scheduling</i> (assignee: Lindsay Corporation).</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <span class="dates">Feb 2017 – Aug 2018</span>
+      <h3>Data Scientist / Software Engineer</h3>
+      <p class="org"><b>Climate Corporation (Monsanto) &amp; DuPont Pioneer</b> · USA — client engagements via Novedea Systems, QCI, and Colaberry</p>
+      <ul>
+        <li>Engineered GB-scale geospatial features from Monsanto pipeline APIs and the Climate data warehouse using Spark (PySpark, sparklyr) on AWS EC2.</li>
+        <li>Improved crop growth-stage prediction accuracy from ±7 days to ±3 days; the model shipped in a Climate product.</li>
+        <li>Built a feature-selection automation framework (EDA, QA/QC, mixed models, variance component analysis) for genotype × environment analysis, cutting analysis time from 9 months to 90 minutes.</li>
+        <li>Presented findings to the leadership team weekly, translating technical results into actionable business recommendations.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Selected Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Smart-Agriculture AI Platform</h3>
+        <p>YOLO-based blueberry ripeness detection with weather alerting, deployed as a live web app.</p>
+        <a href="https://chengchou.pythonanywhere.com" target="_blank" rel="noopener">Live demo →</a>
+      </div>
+      <div class="card">
+        <h3>Stadium Crowd Analytics</h3>
+        <p>Real-time crowd counting with YOLOv12 / YOLOv8 + SAHI head detection and dual-head EfficientNet-B0 age/gender classification; 20k+ curated images.</p>
+        <a href="https://github.com/itsjameshan" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+      <div class="card">
+        <h3>US Wheat Yield Prediction</h3>
+        <p>Machine learning yield prediction from environmental features for the United States.</p>
+        <a href="https://github.com/itsjameshan/Wheat-Yield-prediction-for-United-States-by-environmental-features" target="_blank" rel="noopener">GitHub (14★) →</a>
+      </div>
+      <div class="card">
+        <h3>CornSoyWater</h3>
+        <p>Web/mobile irrigation decision-support app for corn and soybean fields — Ph.D. dissertation project, presented at three ASA-CSSA-SSSA international meetings.</p>
+        <a href="https://github.com/itsjameshan" target="_blank" rel="noopener">More on GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="entry">
+      <span class="dates">2013 – 2016</span>
+      <h3>Ph.D., Agronomy &amp; Horticulture (Crop Modeling)</h3>
+      <p class="org"><b>University of Nebraska–Lincoln</b>, USA · full scholarship · Dissertation: CornSoyWater irrigation decision app</p>
+    </div>
+    <div class="entry">
+      <span class="dates">2010 – 2012</span>
+      <h3>M.S., Agronomy (Weed Science)</h3>
+      <p class="org"><b>University of Nebraska–Lincoln</b>, USA · full scholarship</p>
+    </div>
+    <div class="entry">
+      <span class="dates">2007 – 2010</span>
+      <h3>M.S., Grassland Science</h3>
+      <p class="org"><b>South China Agricultural University</b>, China</p>
+    </div>
+    <div class="entry">
+      <span class="dates">2003 – 2007</span>
+      <h3>B.S., Plant Protection</h3>
+      <p class="org"><b>South China University of Tropical Agriculture</b>, China</p>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Patent, Publications &amp; Awards</h2>
+    <p class="pub"><b>US invention patent:</b> System and Method for Adjusting Irrigation System Scheduling (assignee: Lindsay Corporation).</p>
+    <p class="pub">Han C., Young S.L. Ecology of Musk Thistle (<i>Carduus nutans</i>) Seed Germination for Grasslands of Temperate Climates. <i>Weed Science</i>, 2013.</p>
+    <p class="pub">Han C., Young S.L. Drought and Grazing Disturbances and Resistance to Invasion by Warm- and Cool-Season Perennial Grassland Communities. <i>Ecological Restoration</i>, 2014.</p>
+    <p class="pub">Han C., Young S.L. Root Growth of Two Perennial Grass Types and Musk Thistle in Temperate Grasslands of North America. <i>Invasive Plant Science and Management</i>, 2014.</p>
+    <p class="pub">Han J.C., Young S.L. Invasion during Extreme Weather: Success and Failure in a Temperate Perennial Grassland. <i>Great Plains Research</i>, 2016.</p>
+    <p class="pub">+ 3 further peer-reviewed publications; speaker and poster presenter at three ASA-CSSA-SSSA International Annual Meetings.</p>
+    <p class="pub"><b>1st place</b>, Poster Competition, ASA-CSSA-SSSA International Annual Meeting, Minneapolis, 2015 · <b>2nd place</b>, New Venture Pitch Competition, Northwest Missouri State University, 2014.</p>
+  </section>
+
+</div>
+
+<!-- ==================== 中文简历 ==================== -->
+<div class="zh-divider" id="zh">
+  <h2>中文简历</h2>
+  <p>Chinese Résumé</p>
+</div>
+
+<div class="wrap" lang="zh-CN">
+
+  <section>
+    <h2>个人简介</h2>
+    <p style="font-size:15.5px; color:#2c3a48;">
+      韩承畴（James Han），博士，AI 方向数据科学家，现任昆明学院讲师，持高校教师资格证。拥有十余年机器学习、深度学习与数据科学项目经验，
+      当前专注大模型应用（RAG、提示词工程、智能体工作流）与计算机视觉（YOLO 目标检测、EfficientNet 图像分类、实时计数系统）。
+      2010 年获全额奖学金赴美国内布拉斯加大学林肯分校深造，先后取得硕士和博士学位。2017 至 2023 年先后在美国气候公司（孟山都）、
+      杜邦先锋、林赛、CIBO 等多家科技公司任数据科学家、量化农业科学家，为商业平台开发维护 30 种生产级模型，并在 Azure 上部署 CNN 图像模型。
+      获美国发明专利 1 项，发表 SCI 论文 7 篇。研究方向：人工智能与智慧农业深度融合、神经网络与深度学习。
+    </p>
+  </section>
+
+  <section>
+    <h2>工作经历</h2>
+    <div class="entry">
+      <span class="dates">2023.10 – 至今</span>
+      <h3>讲师（人工智能与数据科学）</h3>
+      <p class="org"><b>昆明学院</b> · 中国昆明</p>
+      <ul>
+        <li>讲授神经网络与深度学习、Python 编程、Linux Shell、数据库原理等课程，组织 AI 工程化实训，带学生完整走完数据清洗 → 建模 → 评估 → 答辩全流程。</li>
+        <li>构建体育场人群分析计算机视觉系统（YOLOv12、YOLOv8+SAHI 头部检测计数，双头 EfficientNet-B0 年龄/性别分类）；指导学生团队完成 2 万余张图像的清洗、标注与增强（标注准确率 97%），实现实时人群计数与可视化统计网页。</li>
+        <li>设计烟草质量表征 7 模型机器学习框架；整理质控 CrowdHuman、ShanghaiTech、NWPU-Crowd 等大型数据集。</li>
+        <li>开发并上线智慧农业网络平台（YOLO 蓝莓成熟度检测 + 气象预警在线演示），维护计算机视觉、作物模型与语音处理等开源项目。</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <span class="dates">2021.08 – 2023.10</span>
+      <h3>量化农业科学家</h3>
+      <p class="org"><b>CIBO Technologies</b> · 美国密苏里州圣路易斯</p>
+      <ul>
+        <li>负责 Verra 农业碳信用验证项目的数据采集、清洗与质量控制（Verra 为制定全球农业与环境可持续标准的机构）。</li>
+        <li>用 Python 对耕作方式、耕作深度、种植/收获日期、施肥等管理因素进行模型敏感性分析，支撑项目决策。</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <span class="dates">2018.08 – 2021.07</span>
+      <h3>FieldNET Advisor 解决方案专家（数据科学家）</h3>
+      <p class="org"><b>Lindsay Corporation（林赛公司）</b> · 美国内布拉斯加州奥马哈</p>
+      <ul>
+        <li>为商业灌溉调度平台 FieldNET Advisor 开发维护 30 种作物模型，结合卫星影像支持灌溉调度，覆盖玉米、大豆、马铃薯、棉花、冬小麦、苜蓿等作物。</li>
+        <li>在 Azure 上开发部署 CNN 模型，从田间传感器图像识别作物生育期（出苗、开花）。</li>
+        <li>美国发明专利《调整灌溉系统调度的系统和方法》共同发明人（专利权人：林赛公司）。</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <span class="dates">2017.02 – 2018.08</span>
+      <h3>数据科学家 / 软件工程师</h3>
+      <p class="org"><b>美国气候公司（孟山都）、杜邦先锋</b> · 美国（经 Novedea Systems、QCI、Colaberry 项目派驻）</p>
+      <ul>
+        <li>使用 Spark（PySpark、sparklyr）在 AWS EC2 上处理 GB 级农业气候数据，进行地理空间特征工程。</li>
+        <li>将作物生育期预测精度由约 ±7 天提升至 ±3 天，模型应用于气候公司产品。</li>
+        <li>开发特征选择自动化框架（EDA、质控、混合模型、方差分量分析），将基因型 × 环境分析时间从 9 个月缩短至 90 分钟；每周向管理层汇报技术结果，支持业务决策。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>教育背景</h2>
+    <div class="entry">
+      <span class="dates">2013.01 – 2016.12</span>
+      <h3>博士 · 农学与园艺（作物模型）</h3>
+      <p class="org"><b>美国内布拉斯加大学林肯分校</b> · 全额奖学金 · 博士论文：CornSoyWater 玉米大豆灌溉决策网络应用</p>
+    </div>
+    <div class="entry">
+      <span class="dates">2010.09 – 2012.12</span>
+      <h3>硕士 · 农学（杂草科学）</h3>
+      <p class="org"><b>美国内布拉斯加大学林肯分校</b> · 全额奖学金</p>
+    </div>
+    <div class="entry">
+      <span class="dates">2007.09 – 2010.06</span>
+      <h3>硕士 · 草业科学</h3>
+      <p class="org"><b>华南农业大学</b></p>
+    </div>
+    <div class="entry">
+      <span class="dates">2003.09 – 2007.06</span>
+      <h3>学士 · 植物保护</h3>
+      <p class="org"><b>华南热带农业大学</b></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>专利、论文与奖项</h2>
+    <p class="pub"><b>美国发明专利：</b>调整灌溉系统调度的系统和方法（System and Method for Adjusting Irrigation System Scheduling，专利权人：林赛公司）。</p>
+    <p class="pub">在 <i>Weed Science</i>、<i>Ecological Restoration</i>、<i>Invasive Plant Science and Management</i>、<i>Great Plains Research</i> 等国际 SCI 期刊发表论文 7 篇；先后在 3 届全美农业、作物、土壤国际年会（ASA-CSSA-SSSA）作大会演讲及海报展示。</p>
+    <p class="pub">2015 年 ASA-CSSA-SSSA 国际年会海报竞赛第一名；2014 年美国西北密苏里州立大学创业大赛第二名；内布拉斯加大学林肯分校硕士、博士全额奖学金。</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    James Han · <a href="mailto:itsjameschan@gmail.com">itsjameschan@gmail.com</a> ·
+    <a href="https://github.com/itsjameshan" target="_blank" rel="noopener">GitHub</a>
+    &nbsp;|&nbsp; <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
+  </div>
+</footer>
+
+</body>
+</html>
