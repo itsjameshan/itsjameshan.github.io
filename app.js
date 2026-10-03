@@ -209,8 +209,8 @@ if (predictionWindow) {
   const buttons = [...predictionWindow.querySelectorAll('button[data-error]')];
   const readout = predictionWindow.querySelector('[data-window-readout]');
   const readouts = {
-    7: 'Before: ±7 days — the stage could land anywhere in a window of about two weeks.',
-    3: 'After: ±3 days — the window narrows to about one week.'
+    7: 'Before: approximate crop growth-stage prediction error of ±7 days.',
+    3: 'After: approximate crop growth-stage prediction error of ±3 days.'
   };
   let touched = false;
   const setError = value => {
@@ -257,11 +257,25 @@ function activateChapter(active) {
 }
 
 if (chapters.length && 'IntersectionObserver' in window) {
-  const copyObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) activateChapter(entry.target.closest('[data-chapter]'));
-    });
-  }, { rootMargin: '-45% 0px -45% 0px' });
+  document.documentElement.classList.add('method-enhanced');
+  let copyObserver;
+  let resizeFrame;
+  function observeChapterCopy() {
+    if (copyObserver) copyObserver.disconnect();
+    // IntersectionObserver percentages use viewport width, even for vertical margins.
+    const margin = Math.floor(window.innerHeight * .45);
+    copyObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) activateChapter(entry.target.closest('[data-chapter]'));
+      });
+    }, { rootMargin: `-${margin}px 0px -${margin}px 0px` });
+    chapters.forEach(chapter => copyObserver.observe(chapter.querySelector('.chapter-copy')));
+  }
+  observeChapterCopy();
+  window.addEventListener('resize', () => {
+    window.cancelAnimationFrame(resizeFrame);
+    resizeFrame = window.requestAnimationFrame(observeChapterCopy);
+  });
   const figureObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
@@ -271,7 +285,6 @@ if (chapters.length && 'IntersectionObserver' in window) {
     syncDrawn();
   }, { threshold: .3 });
   chapters.forEach(chapter => {
-    copyObserver.observe(chapter.querySelector('.chapter-copy'));
     figureObserver.observe(chapter.querySelector('.chapter-figure'));
   });
   wideLayout.addEventListener('change', syncDrawn);

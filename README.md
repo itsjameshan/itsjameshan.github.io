@@ -9,12 +9,12 @@ This is a dependency-free static site. Run `npm start` and open http://localhost
 The page reads as one argument — crop physiology → field and geospatial data → evaluated models → commercial decision tools:
 
 - **Hero:** portrait, statement, role-aware résumé download, and the four-step through-line.
-- **Evidence (`#proof`):** the ±7 → ±3-day prediction window (interactive), 30 commercial crop models, the 5 + 2-year CornSoyWater evaluation, and U.S. Patent 11,771,025.
+- **Evidence (`#proof`):** the ±7 → ±3-day prediction error (interactive), 30 commercial crop models, CornSoyWater evaluation using five years of field data and a two-year irrigation experiment, and U.S. Patent 11,771,025.
 - **Method (`#method`):** four chapters with conceptual figures; on wide screens the figure stays pinned and changes with the chapter in view (`#chapter-physiology`, `#chapter-data`, `#chapter-models`, `#chapter-tools`).
 - **Case files (`#work`):** CornSoyWater plus native `<details>` case files (`#project-fieldnet`, `#project-cibo`, `#project-phenology`, `#project-blueberry`) that open from deep links.
 - **Experience (`#path`), Role fit & résumés (`#fit`), Contact (`#contact`).**
 
-Every figure carries a caption stating whether it is illustrative, conceptual, or decorative. Motion is disabled under `prefers-reduced-motion`, and the content, menu, and case files remain usable without JavaScript. Source Serif is served as WOFF2 with the original TTFs as fallback; `assets/og-card.jpg` is the 1200×630 social preview.
+Every figure carries a caption stating whether it is illustrative, conceptual, or decorative. Decorative animations stop within five seconds and motion is disabled under `prefers-reduced-motion`. The content, menu, and case files remain usable without JavaScript; method figures stay stacked when IntersectionObserver is unavailable. Source Serif is served as WOFF2 with the original TTFs as fallback; `assets/og-card.jpg` is the 1200×630 social preview.
 
 Role-focused links:
 
