@@ -6,14 +6,14 @@
   <meta name="theme-color" content="#f5f0e4">
   <meta name="color-scheme" content="light">
   <title>James Han, Ph.D. · Agronomic Systems Modeling</title>
-  <meta name="description" content="James Han, Ph.D. — agricultural scientist in crop modeling. From crop physiology and field and geospatial data to evaluated models and commercial decision tools: 30 commercial crop models, SALUS evaluation, CornSoyWater, and U.S. Patent 11,771,025.">
+  <meta name="description" content="James Han, Ph.D. — crop modeling with a Python implementation adapted from DSSAT/CROPGRO-Strawberry, 30 commercial crop models, CornSoyWater irrigation research, and U.S. Patent 11,771,025.">
   <meta name="author" content="James Han">
   <link rel="canonical" href="https://itsjameshan.github.io/">
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="James Han, Ph.D.">
   <meta property="og:url" content="https://itsjameshan.github.io/">
   <meta property="og:title" content="James Han, Ph.D. — Crop models that answer to the field">
-  <meta property="og:description" content="Agronomic systems modeling: crop physiology, field data, evaluated models and commercial decision tools.">
+  <meta property="og:description" content="DSSAT/CROPGRO-Strawberry in Python, field-evaluated crop models and commercial irrigation decision tools.">
   <meta property="og:image" content="https://itsjameshan.github.io/assets/og-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -22,7 +22,7 @@
   <meta property="profile:last_name" content="Han">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="James Han, Ph.D. — Crop models that answer to the field">
-  <meta name="twitter:description" content="Crop physiology → field & geospatial data → evaluated models → commercial decision tools.">
+  <meta name="twitter:description" content="DSSAT/CROPGRO-Strawberry in Python → crop-model evaluation → commercial decision tools.">
   <meta name="twitter:image" content="https://itsjameshan.github.io/assets/og-card.jpg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/source-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -32,7 +32,7 @@
   <script>(function(){var root=document.documentElement,fallback=function(){if(!window.jhReady)root.classList.remove('js','method-enhanced');};root.classList.add('js');window.jhFallback=fallback;addEventListener('error',function(event){if(event.filename&&/\/app\.js(\?|$)/.test(event.filename))fallback();});setTimeout(fallback,8000);})();</script>
   <script src="app.js" defer onerror="window.jhFallback&&window.jhFallback()"></script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"James Han","alternateName":"Chengchou James Han","honorificSuffix":"Ph.D.","jobTitle":"Agricultural Scientist","description":"Agricultural scientist working across crop modeling, agronomy, and geospatial analytics.","url":"https://itsjameshan.github.io/","image":"https://itsjameshan.github.io/avatar.jpg","email":"mailto:itsjameschan@gmail.com","sameAs":["https://www.linkedin.com/in/james-han-4b68493a","https://github.com/itsjameshan"],"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Nebraska–Lincoln"},"knowsAbout":["Crop modeling","Process-based crop simulation","SALUS","Crop phenology","Soil-water balance","Irrigation decision support","Agronomy","Geospatial analysis","Python","R"]}
+  {"@context":"https://schema.org","@type":"Person","name":"James Han","alternateName":"Chengchou James Han","honorificSuffix":"Ph.D.","jobTitle":"Agricultural Scientist","description":"Agricultural scientist with a Python implementation adapted from DSSAT/CROPGRO-Strawberry and industry experience in crop modeling, agronomy, and geospatial analytics.","url":"https://itsjameshan.github.io/","image":"https://itsjameshan.github.io/avatar.jpg","email":"mailto:itsjameschan@gmail.com","sameAs":["https://www.linkedin.com/in/james-han-4b68493a","https://github.com/itsjameshan"],"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Nebraska–Lincoln"},"knowsAbout":["Crop modeling","Process-based crop simulation","DSSAT/CROPGRO-Strawberry Python implementation","APSIM workshop experience","Crop phenology","Soil-water balance","Irrigation decision support","Agronomy","Geospatial analysis","Python","R"]}
   </script>
 </head>
 <body>
@@ -65,7 +65,7 @@
             <span class="line" style="--d:2"><span>that answer</span></span>
             <span class="line" style="--d:3"><span>to the <em>field.</em></span></span>
           </h1>
-          <p class="hero-lede">I’m an agricultural scientist with a Ph.D. in crop modeling. I start with crop physiology, work through field and geospatial data, test models against what the field measured — and carry them into commercial decision tools.</p>
+          <p class="hero-lede">I’m an agricultural scientist with a Ph.D. in crop modeling. My DSSAT/CROPGRO-Strawberry project turns crop processes into Python, alongside industry experience testing models against field data and building commercial decision tools.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="downloads/James_Han_Agronomic_Systems_Modeling_Resume.pdf" download><span>Download résumé</span><span class="button-meta">PDF ↓</span></a>
             <a class="link-arrow" href="#proof">See the evidence <span aria-hidden="true">↓</span></a>
@@ -90,7 +90,7 @@
         <ol>
           <li style="--i:0"><a href="#chapter-physiology"><span class="tl-num">01</span><span class="tl-label">Crop physiology</span><span class="tl-note">Phenology · water uptake</span></a></li>
           <li style="--i:1"><a href="#chapter-data"><span class="tl-num">02</span><span class="tl-label">Field &amp; geospatial data</span><span class="tl-note">Trials · imagery · boundaries</span></a></li>
-          <li style="--i:2"><a href="#chapter-models"><span class="tl-num">03</span><span class="tl-label">Evaluated models</span><span class="tl-note">Field data · cross-validation · SALUS</span></a></li>
+          <li style="--i:2"><a href="#chapter-models"><span class="tl-num">03</span><span class="tl-label">Implemented &amp; evaluated models</span><span class="tl-note">DSSAT · Python · model comparison</span></a></li>
           <li style="--i:3"><a href="#chapter-tools"><span class="tl-num">04</span><span class="tl-label">Decision tools</span><span class="tl-note">FieldNET Advisor · CornSoyWater</span></a></li>
         </ol>
       </nav>
@@ -251,11 +251,12 @@
 
           <div class="chapter" data-chapter="models">
             <div class="chapter-copy" id="chapter-models">
-              <p class="chapter-num"><span>03</span> Evaluated models</p>
-              <h3>Test the model before anyone relies on it.</h3>
-              <p>CornSoyWater was evaluated with five years of field data and a two-year irrigation experiment. At Lindsay I used R cross-validation to evaluate commercial crop models. At CIBO I ran SALUS sensitivity analyses on tillage, soil temperature and moisture, and planting and harvest dates, and compared simulated with measured residue-related outputs to assess model behavior and identify limitations.</p>
-              <ul class="chips" aria-label="Topics"><li>SALUS</li><li>Sensitivity analysis</li><li>R cross-validation</li><li>Calibration &amp; validation</li><li>Mixed models</li></ul>
-              <a class="link-arrow" href="#project-cibo">Case file: SALUS &amp; field data <span aria-hidden="true">→</span></a>
+              <p class="chapter-num"><span>03</span> Implemented &amp; evaluated models</p>
+              <h3>Turn crop processes into inspectable code.</h3>
+              <p>I adapted DSSAT/CROPGRO-Strawberry processes into Python: thermal-time phenology, canopy photosynthesis, biomass allocation and fruit development. The project includes DSSAT input readers and a workflow to compare Python outputs with the Fortran model.</p>
+              <p>My field-evaluation experience comes from CornSoyWater — five years of field data and a two-year irrigation experiment — and R cross-validation of commercial crop models at Lindsay.</p>
+              <ul class="chips" aria-label="Topics"><li>DSSAT/CROPGRO-Strawberry</li><li>Python implementation</li><li>Python/Fortran comparison</li><li>R cross-validation</li><li>Calibration &amp; validation</li></ul>
+              <a class="link-arrow" href="#project-strawberry">Case file: DSSAT in Python <span aria-hidden="true">→</span></a>
             </div>
             <figure class="chapter-figure">
               <p class="fig-step" aria-hidden="true">03 <span>/ 04</span></p>
@@ -322,12 +323,36 @@
         <header class="section-head reveal">
           <p class="section-index"><span>§ 03</span> Case files</p>
           <h2 id="work-title">Selected work, <em>in detail.</em></h2>
-          <p class="section-dek">Five projects across doctoral research, a commercial platform and client work. Open any case file for the methods and tools.</p>
+          <p class="section-dek">Six projects across crop-model implementation, doctoral research, a commercial platform and client work. Start with the DSSAT strawberry project, then open any case file for the methods and tools.</p>
         </header>
+
+        <article class="case-feature reveal" id="project-strawberry" aria-labelledby="strawberry-title">
+          <div class="case-feature-head">
+            <p class="case-kicker"><span>01</span> Applied crop-model project · DSSAT/CROPGRO-Strawberry</p>
+            <h3 id="strawberry-title">DSSAT,<br>in Python.</h3>
+            <p class="case-standfirst">Crop processes, made inspectable in code.</p>
+          </div>
+          <div class="case-feature-body">
+            <div class="case-text">
+              <p>I developed a Python implementation adapted from DSSAT/CROPGRO-Strawberry to simulate strawberry growth. It connects thermal-time phenology, canopy photosynthesis and biomass allocation with fruit development.</p>
+              <p>The project includes utilities to read DSSAT experiment and weather inputs, run the Python model and compare its outputs with the Fortran model. That workflow supports inspection of the implementation and its differences from the original model.</p>
+              <ul class="chips" aria-label="Methods"><li>Phenology</li><li>Photosynthesis</li><li>Biomass allocation</li><li>Fruit development</li></ul>
+            </div>
+            <aside class="citation" aria-label="Project source code">
+              <p class="citation-journal">DSSAT/CROPGRO-Strawberry</p>
+              <p class="citation-meta">Python crop-model implementation</p>
+              <p class="citation-title">From DSSAT inputs to Python outputs and a Fortran comparison workflow.</p>
+              <div class="citation-links">
+                <a class="link-arrow" href="https://github.com/itsjameshan/CN-strawberryDSSAT" target="_blank" rel="noopener noreferrer">Explore the project on GitHub <span aria-hidden="true">↗</span></a>
+                <a class="link-arrow muted" href="https://github.com/itsjameshan/CN-strawberryDSSAT/blob/main/enhanced_compare_with_fortran.py" target="_blank" rel="noopener noreferrer">Input &amp; comparison workflow <span aria-hidden="true">↗</span></a>
+              </div>
+            </aside>
+          </div>
+        </article>
 
         <article class="case-feature reveal" id="project-cornsoywater" aria-labelledby="cornsoywater-title">
           <div class="case-feature-head">
-            <p class="case-kicker"><span>01</span> Doctoral research → web application · 2013–2016</p>
+            <p class="case-kicker"><span>02</span> Doctoral research → web application · 2013–2016</p>
             <h3 id="cornsoywater-title">CornSoyWater</h3>
             <p class="case-standfirst">A model is only useful when it helps a grower decide.</p>
           </div>
@@ -353,7 +378,7 @@
         <div class="case-list">
           <details class="case reveal" id="project-fieldnet">
             <summary>
-              <span class="case-num">02</span>
+              <span class="case-num">03</span>
               <span class="case-kicker">Lindsay Corporation · Aug 2018 – Jul 2021</span><h3 class="case-title">Crop science at commercial scale.</h3><span class="case-sub">Thirty crop models, satellite-informed phenology and R&amp;D field trials.</span>
               <span class="case-tag">Modeling &amp; product</span>
               <span class="case-icon" aria-hidden="true"></span>
@@ -374,7 +399,7 @@
 
           <details class="case reveal" id="project-cibo">
             <summary>
-              <span class="case-num">03</span>
+              <span class="case-num">04</span>
               <span class="case-kicker">CIBO Technologies · Aug 2021 – Present</span><h3 class="case-title">Understand what the model is telling you.</h3><span class="case-sub">SALUS sensitivity analysis and quality-checked field-level data.</span>
               <span class="case-tag">Model evaluation</span>
               <span class="case-icon" aria-hidden="true"></span>
@@ -395,7 +420,7 @@
 
           <details class="case reveal" id="project-phenology">
             <summary>
-              <span class="case-num">04</span>
+              <span class="case-num">05</span>
               <span class="case-kicker">Consulting client projects · Feb 2017 – Aug 2018</span><h3 class="case-title">Better predictions, clearer decisions.</h3><span class="case-sub">Crop-stage prediction, multi-location trials and geospatial reporting.</span>
               <span class="case-tag">Agronomic analytics</span>
               <span class="case-icon" aria-hidden="true"></span>
@@ -416,7 +441,7 @@
 
           <details class="case reveal" id="project-blueberry">
             <summary>
-              <span class="case-num">05</span>
+              <span class="case-num">06</span>
               <span class="case-kicker">Applied project · computer vision</span><h3 class="case-title">Take the model beyond the notebook.</h3><span class="case-sub">Blueberry maturity detection, from inference to a usable web tool.</span>
               <span class="case-tag">Applied software</span>
               <span class="case-icon" aria-hidden="true"></span>
@@ -512,7 +537,7 @@
           <div class="role-summary">
             <p class="role-kicker" id="role-kicker">Agronomic systems modeling</p>
             <h3 id="role-heading">Understand the mechanisms.<br>Test the assumptions.<br><em>Make the model useful.</em></h3>
-            <p id="role-description">A Ph.D. in crop modeling and industry experience translating crop physiology, phenology and soil-water processes into commercial decision tools.</p>
+            <p id="role-description">A Ph.D. in crop modeling, a Python implementation adapted from DSSAT/CROPGRO-Strawberry, and industry experience translating crop processes into commercial decision tools.</p>
             <div class="role-downloads">
               <a class="button button-primary" id="resume-download" href="downloads/James_Han_Agronomic_Systems_Modeling_Resume.pdf" download><span>Download résumé</span><span class="button-meta">PDF ↓</span></a>
               <a class="button button-ghost" id="resume-docx" href="downloads/James_Han_Agronomic_Systems_Modeling_Resume.docx" download><span>Word</span><span class="button-meta">.docx ↓</span></a>
@@ -520,13 +545,13 @@
           </div>
           <div class="role-evidence">
             <ol class="fit-evidence" id="fit-evidence">
-              <li><span class="fit-num">01</span><div><h4>Process-based crop models</h4><p>SALUS sensitivity analysis at CIBO; 30 commercial crop models at Lindsay; CornSoyWater doctoral research.</p><a href="#project-cibo">See the modeling work →</a></div></li>
-              <li><span class="fit-num">02</span><div><h4>Calibration, evaluation &amp; experiments</h4><p>R cross-validation, comparisons of simulated and measured residue-related outputs, and R&amp;D trials collecting soil moisture, phenology and yield.</p><a href="#project-fieldnet">See the field evidence →</a></div></li>
-              <li><span class="fit-num">03</span><div><h4>From analysis to shared tools</h4><p>Python, R, Scala and SQL workflows; GitHub pull requests, Confluence documentation and written model reports.</p><a href="#project-cornsoywater">See a decision-support system →</a></div></li>
+              <li><span class="fit-num">01</span><div><h4>Process-based crop models</h4><p>DSSAT/CROPGRO-Strawberry processes implemented in Python; hands-on APSIM workshop experience; 30 commercial crop models at Lindsay and CornSoyWater corn/soybean research.</p><a href="#project-strawberry">See the DSSAT project →</a></div></li>
+              <li><span class="fit-num">02</span><div><h4>Calibration, evaluation &amp; experiments</h4><p>R cross-validation of commercial models, CornSoyWater field evaluation, and R&amp;D trials collecting soil moisture, phenology and yield.</p><a href="#project-fieldnet">See the field evidence →</a></div></li>
+              <li><span class="fit-num">03</span><div><h4>From crop processes to shared tools</h4><p>Python crop-model code, DSSAT input parsing and Python/Fortran output comparison; industry workflows in Python, R, Scala and SQL.</p><a href="https://github.com/itsjameshan/CN-strawberryDSSAT" target="_blank" rel="noopener noreferrer">Explore the project code →</a></div></li>
             </ol>
             <div class="toolkit">
               <p class="side-label">Toolkit from this résumé</p>
-              <ul class="chips" id="role-tools"><li>SALUS</li><li>Process-based simulation</li><li>Corn &amp; soybean phenology</li><li>Soil-water balance</li><li>Nutrient &amp; residue processes</li><li>Calibration &amp; validation</li><li>Python</li><li>R</li><li>Scala</li><li>SQL</li><li>Spark</li><li>AWS EC2</li><li>Azure</li><li>QGIS</li><li>Satellite imagery</li></ul>
+              <ul class="chips" id="role-tools"><li>DSSAT/CROPGRO-Strawberry (Python)</li><li>APSIM workshop experience</li><li>Process-based simulation</li><li>Corn &amp; soybean phenology</li><li>Soil-water balance</li><li>Nutrient &amp; residue processes</li><li>Calibration &amp; validation</li><li>Python</li><li>R</li><li>Scala</li><li>SQL</li><li>Spark</li><li>AWS EC2</li><li>Azure</li><li>QGIS</li><li>Satellite imagery</li></ul>
             </div>
           </div>
         </div>

@@ -16,12 +16,12 @@ The public URL stays the same, and every visitor sees the selected version once 
 
 This is a dependency-free static site. Run `npm start` and open http://localhost:4173; no installation or build step is needed. `npm run check` validates JavaScript syntax. Fonts, artwork, and PDF/Word résumé downloads are served locally.
 
-The page reads as one argument — crop physiology → field and geospatial data → evaluated models → commercial decision tools:
+The page reads as one argument — crop physiology → field and geospatial data → crop-model implementation and evaluation → commercial decision tools. DSSAT/CROPGRO-Strawberry in Python leads the modeling focus; SALUS remains supporting CIBO history:
 
 - **Hero:** portrait, statement, modeling résumé download, and the four-step through-line.
 - **Evidence (`#proof`):** the ±7 → ±3-day prediction error (interactive), 30 commercial crop models, CornSoyWater evaluation using five years of field data and a two-year irrigation experiment, and one U.S. irrigation-scheduling patent (No. 11,771,025).
 - **Method (`#method`):** four chapters with conceptual figures; on wide screens the figure stays pinned and changes with the chapter in view (`#chapter-physiology`, `#chapter-data`, `#chapter-models`, `#chapter-tools`).
-- **Case files (`#work`):** CornSoyWater plus native `<details>` case files (`#project-fieldnet`, `#project-cibo`, `#project-phenology`, `#project-blueberry`) that open from deep links.
+- **Case files (`#work`):** the featured DSSAT/CROPGRO-Strawberry Python project (`#project-strawberry`), CornSoyWater, plus native `<details>` case files (`#project-fieldnet`, `#project-cibo`, `#project-phenology`, `#project-blueberry`) that open from deep links.
 - **Experience (`#path`), Role fit & résumé (`#fit`), Contact (`#contact`).**
 
 Every figure carries a caption stating whether it is illustrative, conceptual, or decorative. Decorative animations stop within five seconds and motion is disabled under `prefers-reduced-motion`. The content, menu, and case files remain usable without JavaScript; method figures stay stacked when IntersectionObserver is unavailable. If `app.js` fails to load or throws, the head script restores the plain layout immediately. Source Serif is served as WOFF2 with the original TTFs as fallback; `assets/og-card.jpg` is the 1200×630 social preview.
@@ -35,6 +35,7 @@ Public source records:
 - [CornSoyWater publication](https://doi.org/10.1016/j.agwat.2025.109454)
 - [UNL doctoral research](https://digitalcommons.unl.edu/dissertations/AAI10247096/)
 - [U.S. Patent 11,771,025](https://patents.google.com/patent/US11771025B2/en)
+- [DSSAT/CROPGRO-Strawberry Python project](https://github.com/itsjameshan/CN-strawberryDSSAT)
 - [Blueberry application](https://github.com/itsjameshan/blueberry)
 
 Design inspiration: [the Superlinear personal-homepage post](https://www.superlinear.academy/c/share-your-projects/personal-homepage-with-opus-5-5) and its [live homepage](https://www.lizheng.ai/en).

@@ -1,6 +1,6 @@
 # James Han, Ph.D.
 
-> Agricultural scientist (Ph.D., crop modeling) focused on agronomic systems modeling: crop physiology → field and geospatial data → evaluated models → commercial decision tools.
+> Agricultural scientist (Ph.D., crop modeling) focused on agronomic systems modeling, led by a Python implementation adapted from DSSAT/CROPGRO-Strawberry alongside field-evaluated models and commercial decision tools.
 
 ## Portfolio
 
@@ -11,6 +11,7 @@
 
 ## Public evidence
 
+- [DSSAT/CROPGRO-Strawberry project](https://github.com/itsjameshan/CN-strawberryDSSAT): Python crop-model implementation, DSSAT input readers and a Python/Fortran output comparison workflow.
 - [CornSoyWater paper](https://doi.org/10.1016/j.agwat.2025.109454): Agricultural Water Management, 2025.
 - [Doctoral research](https://digitalcommons.unl.edu/dissertations/AAI10247096/): Ph.D., University of Nebraska–Lincoln, 2016.
 - [U.S. Patent 11,771,025](https://patents.google.com/patent/US11771025B2/en): co-inventor Chengchou James Han; Lindsay Corporation.
