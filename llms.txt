@@ -1,0 +1,19 @@
+# James Han, Ph.D.
+
+> Agricultural scientist working across crop modeling, agricultural analytics, geospatial data, and practical software systems.
+
+## Portfolio
+
+- [Personal website](https://itsjameshan.github.io/): selected industry experience and project evidence.
+- [Modeling résumé](https://itsjameshan.github.io/downloads/James_Han_Agronomic_Systems_Modeling_Resume.pdf)
+- [Analytics résumé](https://itsjameshan.github.io/downloads/James_Han_Agronomy_Analytics_Resume.pdf)
+- [GitHub](https://github.com/itsjameshan)
+
+## Public evidence
+
+- [CornSoyWater paper](https://doi.org/10.1016/j.agwat.2025.109454): Agricultural Water Management, 2025.
+- [Doctoral research](https://digitalcommons.unl.edu/dissertations/AAI10247096/): Ph.D., University of Nebraska–Lincoln, 2016.
+- [U.S. Patent 11,771,025](https://patents.google.com/patent/US11771025B2/en): co-inventor Chengchou James Han; Lindsay Corporation.
+- [Blueberry code](https://github.com/itsjameshan/blueberry): computer vision and a practical web application.
+
+Industry experience on the website is selected history. CIBO employment ended in February 2024. Employer performance metrics are candidate résumé claims; conceptual charts and decorative point fields are not measured results.
