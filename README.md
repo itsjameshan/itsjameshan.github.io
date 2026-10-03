@@ -4,6 +4,16 @@ Personal portfolio tailored to agronomic systems modeling and agronomy/geospatia
 
 Live address: https://itsjameshan.github.io/
 
+## Switching the live version
+
+GitHub Pages publishes one branch at a time, and the site has two versions: the original site on `master` and this recruiter site on `agronomic-portfolio-2026-10-03`. The repository owner switches between them in [Settings › Pages](https://github.com/itsjameshan/itsjameshan.github.io/settings/pages):
+
+1. Under **Build and deployment**, keep **Source** set to **Deploy from a branch**.
+2. Under **Branch**, choose `master` for the original site or `agronomic-portfolio-2026-10-03` for the recruiter site.
+3. Leave the folder as **/ (root)** and click **Save**.
+
+The public URL stays the same, and every visitor sees the selected version once the deployment finishes (usually a minute or two; cached pages can take up to about ten minutes to refresh). While a branch is selected, each push to it goes live automatically, so do not delete or rename the branch that is currently published.
+
 This is a dependency-free static site. Run `npm start` and open http://localhost:4173; no installation or build step is needed. `npm run check` validates JavaScript syntax. Fonts, artwork, and PDF/Word résumé downloads are served locally.
 
 The page reads as one argument — crop physiology → field and geospatial data → evaluated models → commercial decision tools:
