@@ -17,4 +17,4 @@
 - [U.S. Patent 11,771,025](https://patents.google.com/patent/US11771025B2/en): co-inventor Chengchou James Han; Lindsay Corporation.
 - [Blueberry code](https://github.com/itsjameshan/blueberry): computer vision and a practical web application.
 
-Selected industry experience includes CIBO Technologies, Aug 2021 – Present. Employer performance metrics are candidate résumé claims; conceptual charts and decorative point fields are not measured results.
+At Lindsay Corporation (Aug 2018 – Jul 2021), James modified and improved FieldNET Advisor software, including API integration with John Deere Operations Center. Selected industry experience also includes CIBO Technologies, Aug 2021 – Present. Employer performance metrics are candidate résumé claims; conceptual charts and decorative point fields are not measured results.
