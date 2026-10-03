@@ -14,14 +14,14 @@ The page reads as one argument — crop physiology → field and geospatial data
 - **Case files (`#work`):** CornSoyWater plus native `<details>` case files (`#project-fieldnet`, `#project-cibo`, `#project-phenology`, `#project-blueberry`) that open from deep links.
 - **Experience (`#path`), Role fit & résumés (`#fit`), Contact (`#contact`).**
 
-Every figure carries a caption stating whether it is illustrative, conceptual, or decorative. Decorative animations stop within five seconds and motion is disabled under `prefers-reduced-motion`. The content, menu, and case files remain usable without JavaScript; method figures stay stacked when IntersectionObserver is unavailable. Source Serif is served as WOFF2 with the original TTFs as fallback; `assets/og-card.jpg` is the 1200×630 social preview.
+Every figure carries a caption stating whether it is illustrative, conceptual, or decorative. Decorative animations stop within five seconds and motion is disabled under `prefers-reduced-motion`. The content, menu, and case files remain usable without JavaScript; method figures stay stacked when IntersectionObserver is unavailable. If `app.js` fails to load or throws, the head script restores the plain layout immediately. Source Serif is served as WOFF2 with the original TTFs as fallback; `assets/og-card.jpg` is the 1200×630 social preview.
 
 Role-focused links:
 
 - https://itsjameshan.github.io/?role=modeling#fit
 - https://itsjameshan.github.io/?role=analytics#fit
 
-The two downloadable résumés are verified snapshots of the October 3, 2026 tailored documents. The public portrait is retained from the previous website. Source Serif 4 is distributed under the SIL Open Font License in `assets/OFL.txt`.
+The two downloadable résumés are verified snapshots of the October 3, 2026 tailored documents. The public portrait is retained from the previous website (`avatar.jpg`, unchanged); `assets/portrait-hero.jpg` is the same photo at the same resolution with only the presentation-slide text behind the head smoothed out, used in the hero and social card. Source Serif 4 is distributed under the SIL Open Font License in `assets/OFL.txt`.
 
 Public source records:
 

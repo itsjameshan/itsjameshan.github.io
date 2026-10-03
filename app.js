@@ -1,7 +1,7 @@
 'use strict';
 
 // All content is local and drawn from the two tailored résumés. No API keys or tracking.
-window.jhReady = true;
+// Re-enable the enhanced layout in case the head script's stall timer already fell back.
 document.documentElement.classList.add('js');
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -257,7 +257,11 @@ function activateChapter(active) {
 }
 
 if (chapters.length && 'IntersectionObserver' in window) {
-  document.documentElement.classList.add('method-enhanced');
+  // Switch to the pinned layout without fading figures out, and keep a #chapter-… deep link in place.
+  document.documentElement.classList.add('method-enhanced', 'method-settling');
+  const linkedChapter = window.location.hash.startsWith('#chapter-') ? document.getElementById(window.location.hash.slice(1)) : null;
+  if (linkedChapter) linkedChapter.scrollIntoView({ behavior: 'instant', block: 'start' });
+  window.setTimeout(() => document.documentElement.classList.remove('method-settling'), 400);
   let copyObserver;
   let resizeFrame;
   function observeChapterCopy() {
@@ -324,3 +328,6 @@ window.addEventListener('beforeprint', () => {
   document.querySelectorAll('details.case').forEach(details => { details.open = true; });
   revealTargets.forEach(element => element.classList.add('is-visible'));
 });
+
+// Everything above initialized without throwing; the head script's fallback can stand down.
+window.jhReady = true;

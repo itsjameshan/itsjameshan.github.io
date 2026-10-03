@@ -28,9 +28,9 @@
   <link rel="preload" href="assets/source-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/source-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <!-- Enables enhanced layout before first paint; falls back to plain content if app.js never runs. -->
-  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.jhReady)document.documentElement.classList.remove('js');},4000);</script>
-  <script src="app.js" defer></script>
+  <!-- Enables the enhanced layout before first paint. If app.js fails to load or throws, the plain layout returns at once; the timer only covers a stalled download. -->
+  <script>(function(){var root=document.documentElement,fallback=function(){if(!window.jhReady)root.classList.remove('js','method-enhanced');};root.classList.add('js');window.jhFallback=fallback;addEventListener('error',function(event){if(event.filename&&/\/app\.js(\?|$)/.test(event.filename))fallback();});setTimeout(fallback,8000);})();</script>
+  <script src="app.js" defer onerror="window.jhFallback&&window.jhFallback()"></script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Person","name":"James Han","alternateName":"Chengchou James Han","honorificSuffix":"Ph.D.","jobTitle":"Agricultural Scientist","description":"Agricultural scientist working across crop modeling, agronomy, and geospatial analytics.","url":"https://itsjameshan.github.io/","image":"https://itsjameshan.github.io/avatar.jpg","email":"mailto:itsjameschan@gmail.com","sameAs":["https://www.linkedin.com/in/james-han-4b68493a","https://github.com/itsjameshan"],"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Nebraska–Lincoln"},"knowsAbout":["Crop modeling","Process-based crop simulation","SALUS","Crop phenology","Soil-water balance","Irrigation decision support","Agronomy","Geospatial analysis","Python","R"]}
   </script>
@@ -80,7 +80,7 @@
           </div>
           <figure class="portrait">
             <div class="portrait-frame">
-              <img src="avatar.jpg" width="380" height="474" alt="James Han speaking in front of a presentation screen" fetchpriority="high" decoding="async">
+              <img src="assets/portrait-hero.jpg" width="380" height="474" alt="James Han speaking in front of a presentation screen" fetchpriority="high" decoding="async">
             </div>
             <figcaption><strong>James Han, Ph.D.</strong><span>Crop modeling</span><span>Nebraska–Lincoln</span></figcaption>
           </figure>

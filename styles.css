@@ -275,6 +275,8 @@ figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); }
 .js .draw { stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.7s var(--ease) .15s; }
 .js .chapter.is-drawn .draw { stroke-dashoffset: 0; }
 
+.method-settling .chapter-figure { transition: none !important; }
+
 @media (min-width: 960px) {
   .method-enhanced .chapters { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); column-gap: clamp(48px, 6vw, 110px); }
   .method-enhanced .chapter { display: contents; }
@@ -552,6 +554,7 @@ figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); }
   .role-downloads .button { width: 100%; justify-content: space-between; }
 
   .contact-art { right: -45%; width: 130vw; opacity: .35; }
+  .contact-email { font-size: min(6.3vw, 30px); white-space: nowrap; }
   .contact-actions a, .copy-email { flex: 1 1 auto; justify-content: center; }
 }
 
