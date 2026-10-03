@@ -3,131 +3,567 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#103e2b">
-  <meta name="description" content="James Han, Ph.D. — agricultural scientist connecting crop physiology, field data, and software. Explore commercial crop models, irrigation decision support, and agricultural analytics.">
-  <meta property="og:title" content="James Han — Science that works in the field">
-  <meta property="og:description" content="Crop modeling. Agricultural analytics. Software for real decisions. Explore the work of James Han, Ph.D.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://itsjameshan.github.io/">
-  <meta property="og:image" content="https://itsjameshan.github.io/avatar.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f0e4">
+  <meta name="color-scheme" content="light">
+  <title>James Han, Ph.D. · Agronomic Systems Modeling</title>
+  <meta name="description" content="James Han, Ph.D. — agricultural scientist in crop modeling. From crop physiology and field and geospatial data to evaluated models and commercial decision tools: 30 commercial crop models, SALUS evaluation, CornSoyWater, and U.S. Patent 11,771,025.">
+  <meta name="author" content="James Han">
   <link rel="canonical" href="https://itsjameshan.github.io/">
-  <title>James Han, Ph.D. · Agricultural Science & Systems</title>
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="James Han, Ph.D.">
+  <meta property="og:url" content="https://itsjameshan.github.io/">
+  <meta property="og:title" content="James Han, Ph.D. — Crop models that answer to the field">
+  <meta property="og:description" content="Agronomic systems modeling and agronomy & geospatial analytics: crop physiology, field data, evaluated models and commercial decision tools.">
+  <meta property="og:image" content="https://itsjameshan.github.io/assets/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="James Han, Ph.D. — Crop models that answer to the field.">
+  <meta property="profile:first_name" content="James">
+  <meta property="profile:last_name" content="Han">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="James Han, Ph.D. — Crop models that answer to the field">
+  <meta name="twitter:description" content="Crop physiology → field & geospatial data → evaluated models → commercial decision tools.">
+  <meta name="twitter:image" content="https://itsjameshan.github.io/assets/og-card.jpg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/source-serif-regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/source-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/source-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <!-- Enables enhanced layout before first paint; falls back to plain content if app.js never runs. -->
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.jhReady)document.documentElement.classList.remove('js');},4000);</script>
   <script src="app.js" defer></script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"James Han","alternateName":"Chengchou James Han","jobTitle":"Agricultural Scientist","email":"mailto:itsjameschan@gmail.com","sameAs":["https://www.linkedin.com/in/james-han-4b68493a","https://github.com/itsjameshan"],"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Nebraska–Lincoln"},"knowsAbout":["Crop modeling","Agricultural analytics","Irrigation decision support","Python","R","Geospatial analysis"]}
+  {"@context":"https://schema.org","@type":"Person","name":"James Han","alternateName":"Chengchou James Han","honorificSuffix":"Ph.D.","jobTitle":"Agricultural Scientist","description":"Agricultural scientist working across crop modeling, agronomy, and geospatial analytics.","url":"https://itsjameshan.github.io/","image":"https://itsjameshan.github.io/avatar.jpg","email":"mailto:itsjameschan@gmail.com","sameAs":["https://www.linkedin.com/in/james-han-4b68493a","https://github.com/itsjameshan"],"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Nebraska–Lincoln"},"knowsAbout":["Crop modeling","Process-based crop simulation","SALUS","Crop phenology","Soil-water balance","Irrigation decision support","Agronomy","Geospatial analysis","Python","R"]}
   </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header" id="site-header">
-    <div class="nav-wrap">
-      <a class="wordmark" href="#top" aria-label="James Han, back to top">James Han<span>Ph.D.</span></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">＋</span></button>
+    <div class="container nav-wrap">
+      <a class="wordmark" href="#top" aria-label="James Han, Ph.D. — back to top">James Han<span>Ph.D.</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span class="menu-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
       <nav id="main-nav" aria-label="Main navigation">
-        <a href="#work">Selected work</a>
-        <a href="#fit">Role fit</a>
-        <a href="#path">My path</a>
-        <a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+        <a href="#proof">Evidence</a>
+        <a href="#method">Method</a>
+        <a href="#work">Case files</a>
+        <a href="#path">Experience</a>
+        <a href="#fit">Résumés</a>
+        <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main">
+    <!-- Hero: who, what, and the through-line, all on the first screen. -->
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero-grain" aria-hidden="true"></div>
-      <div class="container hero-layout">
+      <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow light"><span class="small-mark" aria-hidden="true">✳</span> AGRICULTURAL SCIENTIST & SYSTEMS BUILDER</p>
-          <h1 id="hero-title">SCIENCE<br>THAT WORKS<br><em>IN THE FIELD.</em></h1>
-          <p class="hero-lede">I’m James Han. I turn crop physiology, field observations, and complex data into models and tools that help people make better agricultural decisions.</p>
+          <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span>Agronomic systems modeling <span class="kicker-sep" aria-hidden="true">/</span> Agronomy &amp; geospatial analytics</p>
+          <h1 id="hero-title" class="hero-title">
+            <span class="hero-byline">James Han, Ph.D.<span class="sr-only"> — </span></span>
+            <span class="line" style="--d:1"><span>Crop models</span></span>
+            <span class="line" style="--d:2"><span>that answer</span></span>
+            <span class="line" style="--d:3"><span>to the <em>field.</em></span></span>
+          </h1>
+          <p class="hero-lede">I’m an agricultural scientist with a Ph.D. in crop modeling. I start with crop physiology, work through field and geospatial data, test models against what the field measured — and carry them into commercial decision tools.</p>
           <div class="hero-actions">
-            <a class="button button-cream" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
-            <a class="hero-text-link" href="#fit">Find your role fit <span aria-hidden="true">→</span></a>
+            <a class="button button-primary" href="downloads/James_Han_Agronomic_Systems_Modeling_Resume.pdf" download data-resume="pdf"><span data-resume-label>Download modeling résumé</span><span class="button-meta">PDF ↓</span></a>
+            <a class="link-arrow" href="#proof">See the evidence <span aria-hidden="true">↓</span></a>
           </div>
-          <p class="hero-footnote">Ph.D., University of Nebraska–Lincoln <span aria-hidden="true">·</span> Science → software → decisions</p>
+          <p class="hero-switch" data-lens-switch><span data-lens-prompt>Hiring for agronomy or geospatial analytics?</span> <a href="?role=analytics#fit" data-lens-link="analytics">Switch to the analytics lens <span aria-hidden="true">→</span></a></p>
         </div>
-        <div class="hero-art" aria-label="An illustrated agricultural landscape, combining crop rows and scientific contour lines">
-          <div class="art-orbit" aria-hidden="true"></div>
-          <img src="assets/field-landscape.svg" width="720" height="720" alt="" class="landscape" fetchpriority="high">
-          <div class="art-topline"><span>THE FIELD IS THE STARTING POINT.</span><span aria-hidden="true">↗</span></div>
-          <div class="art-caption"><span class="art-cross" aria-hidden="true">+</span><div>Understand the system.<br><strong>Build something useful.</strong></div><span class="art-index">FIELD NOTES / 01</span></div>
+
+        <div class="hero-visual">
+          <div class="hero-plate" aria-hidden="true">
+            <img class="plate-art" src="assets/field-landscape.svg" width="720" height="720" alt="" decoding="async">
+            <span class="plate-label">Field illustration · decorative</span>
+          </div>
+          <figure class="portrait">
+            <div class="portrait-frame">
+              <img src="avatar.jpg" width="380" height="474" alt="James Han speaking in front of a presentation screen" fetchpriority="high" decoding="async">
+            </div>
+            <figcaption><strong>James Han, Ph.D.</strong><span>Crop modeling</span><span>Nebraska–Lincoln</span></figcaption>
+          </figure>
         </div>
       </div>
-      <div class="hero-bottom container"><span>CROP MODELING</span><span>FIELD & GEOSPATIAL DATA</span><span>APPLIED MACHINE LEARNING</span><a href="#proof" aria-label="Scroll to evidence">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a></div>
+
+      <nav class="container throughline" aria-label="The through-line of my work">
+        <ol>
+          <li style="--i:0"><a href="#chapter-physiology"><span class="tl-num">01</span><span class="tl-label">Crop physiology</span><span class="tl-note">Phenology · water uptake</span></a></li>
+          <li style="--i:1"><a href="#chapter-data"><span class="tl-num">02</span><span class="tl-label">Field &amp; geospatial data</span><span class="tl-note">Trials · imagery · boundaries</span></a></li>
+          <li style="--i:2"><a href="#chapter-models"><span class="tl-num">03</span><span class="tl-label">Evaluated models</span><span class="tl-note">Field data · cross-validation · SALUS</span></a></li>
+          <li style="--i:3"><a href="#chapter-tools"><span class="tl-num">04</span><span class="tl-label">Decision tools</span><span class="tl-note">FieldNET Advisor · CornSoyWater</span></a></li>
+        </ol>
+      </nav>
     </section>
 
-    <section class="proof-section" id="proof" aria-labelledby="proof-title">
+    <!-- Evidence: four checkable figures, two of them interactive. -->
+    <section class="evidence" id="proof" aria-labelledby="proof-title">
       <div class="container">
-        <div class="section-intro compact reveal"><p class="eyebrow">A FEW THINGS TO KNOW</p><h2 id="proof-title">Grounded in science.<br><em>Built for the real world.</em></h2></div>
-        <div class="proof-grid reveal">
-          <a class="proof-item" href="#project-fieldnet"><div class="proof-value">30</div><h3>commercial crop models</h3><p>Developed and maintained for Lindsay’s FieldNET Advisor.</p><span class="text-link">Explore the work <span aria-hidden="true">↗</span></span></a>
-          <a class="proof-item" href="#project-phenology"><div class="proof-value days">±7 <span>→</span> ±3<small>days</small></div><h3>crop-stage prediction error</h3><p>Approximate improvement on a Climate Corporation client project.</p><span class="text-link">See the context <span aria-hidden="true">↗</span></span></a>
-          <a class="proof-item" href="#project-cornsoywater"><div class="proof-value">5 <small>years</small></div><h3>of field data</h3><p>Used in doctoral model evaluation, alongside a two-year irrigation experiment.</p><span class="text-link">Read the research <span aria-hidden="true">↗</span></span></a>
-          <a class="proof-item" href="https://patents.google.com/patent/US11771025B2/en" target="_blank" rel="noopener noreferrer"><div class="proof-value">01</div><h3>U.S. irrigation patent</h3><p>Co-inventor of a method linking soil-water depletion to scheduling.</p><span class="text-link">View the patent <span aria-hidden="true">↗</span></span></a>
+        <header class="section-head reveal">
+          <p class="section-index"><span>§ 01</span> Evidence</p>
+          <h2 id="proof-title">The evidence, <em>in the field’s own units.</em></h2>
+          <p class="section-dek">Days of prediction error, seasons of field data, models in production. Each figure links to its context or to the public record.</p>
+        </header>
+
+        <div class="evidence-grid">
+          <article class="ev ev-window reveal" aria-labelledby="ev-window-title">
+            <p class="ev-kicker">Climate Corporation client project · consulting, 2017–2018</p>
+            <p class="ev-value" aria-hidden="true"><span>±7</span><span class="ev-arrow">→</span><span>±3</span><small>days</small></p>
+            <h3 id="ev-window-title">Crop growth-stage prediction error, from about ±7 to ±3 days</h3>
+            <p class="ev-text">Approximate improvement for a model deployed in a Climate Corporation product.</p>
+            <figure class="window" data-error="3" data-window>
+              <div class="window-controls" role="group" aria-label="Compare prediction error">
+                <button type="button" data-error="7" aria-pressed="false">Before <span>±7 days</span></button>
+                <button type="button" data-error="3" aria-pressed="true">After <span>±3 days</span></button>
+              </div>
+              <div class="window-strip" aria-hidden="true">
+                <div class="window-days"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="window-ghost"></div>
+                <div class="window-band"></div>
+                <div class="window-center"><span>Predicted stage date</span></div>
+              </div>
+              <div class="window-scale" aria-hidden="true"><span style="--d:-7">−7</span><span style="--d:-3">−3</span><span style="--d:0">0</span><span style="--d:3">+3</span><span style="--d:7">+7 d</span></div>
+              <p class="window-readout" data-window-readout aria-live="polite">After: ±3 days — the window narrows to about one week.</p>
+              <figcaption><span class="fig-no">Fig. 1</span> Illustrative scale. Band widths match the approximate errors; no client data is shown.</figcaption>
+            </figure>
+            <a class="ev-link" href="#project-phenology">Case file: phenology &amp; analytics <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="ev ev-models reveal" aria-labelledby="ev-models-title">
+            <p class="ev-kicker">Lindsay Corporation · Aug 2018 – Jul 2021</p>
+            <p class="ev-value" aria-hidden="true">30</p>
+            <h3 id="ev-models-title">Commercial crop models, developed and maintained</h3>
+            <p class="ev-text">For FieldNET Advisor, Lindsay’s commercial irrigation platform — including corn, soybean and cotton.</p>
+            <figure class="rows">
+              <div class="rows-field" aria-hidden="true"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i><i style="--i:10"></i><i style="--i:11"></i><i style="--i:12"></i><i style="--i:13"></i><i style="--i:14"></i><i style="--i:15"></i><i style="--i:16"></i><i style="--i:17"></i><i style="--i:18"></i><i style="--i:19"></i><i style="--i:20"></i><i style="--i:21"></i><i style="--i:22"></i><i style="--i:23"></i><i style="--i:24"></i><i style="--i:25"></i><i style="--i:26"></i><i style="--i:27"></i><i style="--i:28"></i><i style="--i:29"></i></div>
+              <figcaption><span class="fig-no">Fig. 2</span> Thirty rows, one per model. Decorative.</figcaption>
+            </figure>
+            <a class="ev-link" href="#project-fieldnet">Case file: FieldNET Advisor <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="ev ev-seasons reveal" aria-labelledby="ev-seasons-title">
+            <p class="ev-kicker">Doctoral research · University of Nebraska–Lincoln</p>
+            <p class="ev-value" aria-hidden="true">5<span class="ev-plus">+</span>2<small>years</small></p>
+            <h3 id="ev-seasons-title">Field evaluation behind CornSoyWater</h3>
+            <p class="ev-text">Model performance evaluated with five years of field data and a two-year irrigation experiment.</p>
+            <figure class="seasons">
+              <div class="season-rows" aria-hidden="true">
+                <div class="season-row"><span class="season-label">Field data</span><span class="season-blocks"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i></span></div>
+                <div class="season-row"><span class="season-label">Irrigation experiment</span><span class="season-blocks experiment"><i style="--i:5"></i><i style="--i:6"></i></span></div>
+              </div>
+              <figcaption><span class="fig-no">Fig. 3</span> Durations only; calendar years not shown.</figcaption>
+            </figure>
+            <a class="ev-link" href="https://doi.org/10.1016/j.agwat.2025.109454" target="_blank" rel="noopener noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="ev ev-patent reveal" aria-labelledby="ev-patent-title">
+            <p class="ev-kicker">U.S. Patent · Lindsay Corporation, 2023</p>
+            <p class="ev-value ev-value-patent" aria-hidden="true">11,771,025</p>
+            <h3 id="ev-patent-title">Co-inventor of a U.S. irrigation-scheduling patent</h3>
+            <p class="ev-text"><cite>System and method for adjusting irrigation system scheduling based on estimated soil water depletion.</cite> Charling, K. A., and Han, C. J.</p>
+            <a class="ev-link" href="https://patents.google.com/patent/US11771025B2/en" target="_blank" rel="noopener noreferrer">View on Google Patents <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+        <p class="evidence-note reveal">Figures are taken from my two résumés and the public records linked here. Anything labeled “illustrative,” “conceptual” or “decorative” is a drawing, not a measured result.</p>
+      </div>
+    </section>
+
+    <!-- Method: one chain from physiology to decision, with a figure per link. -->
+    <section class="method" id="method" aria-labelledby="method-title">
+      <div class="container">
+        <header class="section-head on-dark reveal">
+          <p class="section-index"><span>§ 02</span> Method</p>
+          <h2 id="method-title">From how a crop grows <em>to what a grower decides.</em></h2>
+          <p class="section-dek">My work follows one chain: understand the crop, measure the field, test the model, then put it where decisions get made.</p>
+        </header>
+
+        <div class="chapters" data-chapters>
+          <div class="chapter is-active" data-chapter="physiology">
+            <div class="chapter-copy" id="chapter-physiology">
+              <p class="chapter-num"><span>01</span> Crop physiology</p>
+              <h3>Start with how the crop actually grows.</h3>
+              <p>My doctoral research examined soil-water balance, crop growth, root distribution, water uptake and yield under deficit irrigation in corn and soybean. Phenology, water stress, nutrient and residue processes — that physiology is what a process-based model has to get right first.</p>
+              <ul class="chips" aria-label="Topics"><li>Corn &amp; soybean phenology</li><li>Soil-water balance</li><li>Root-zone water uptake</li><li>Deficit irrigation</li></ul>
+              <a class="link-arrow" href="https://digitalcommons.unl.edu/dissertations/AAI10247096/" target="_blank" rel="noopener noreferrer">Doctoral research <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure class="chapter-figure">
+              <p class="fig-step" aria-hidden="true">01 <span>/ 04</span></p>
+              <svg class="fig-svg" viewBox="0 0 560 440" aria-hidden="true" focusable="false">
+                <path class="f-soil" d="M24 300H536"/>
+                <path class="f-layer" d="M24 344H536M24 388H536M24 432H536"/>
+                <text class="f-label" x="536" y="336" text-anchor="end">ROOT ZONE</text>
+                <text class="f-label" x="536" y="292" text-anchor="end">SOIL SURFACE</text>
+                <g class="f-plant">
+                  <path class="draw" pathLength="1" d="M150 300C150 240 148 170 150 104"/>
+                  <path class="draw" pathLength="1" d="M150 268C124 256 98 258 72 274M150 262C178 250 204 252 228 266M150 220C122 204 96 206 70 222M150 214C180 198 206 200 232 214M150 172C128 154 108 152 88 160M150 166C174 148 194 148 214 156M150 130C138 116 128 112 118 112M150 126C162 112 172 108 182 108"/>
+                </g>
+                <path class="f-warm draw" pathLength="1" d="M150 104L142 80M150 104L150 76M150 104L158 80M156 236C168 226 170 206 162 196C154 206 152 222 156 236Z"/>
+                <path class="f-root draw" pathLength="1" d="M150 300C142 330 124 352 100 398M150 300C160 334 182 360 208 404M150 300C150 340 150 380 152 424M150 300C132 318 104 324 80 338M150 300C172 316 200 322 226 334M126 344C114 352 106 362 102 372M176 346C188 356 196 366 200 378"/>
+                <path class="f-flow" d="M92 420L106 380M214 420L200 380"/>
+                <path class="f-head" d="M100 388L106 380L109 390M194 389L200 380L204 390"/>
+                <text class="f-label" x="226" y="424">WATER UPTAKE</text>
+                <path class="f-flow" d="M244 206C254 196 238 186 248 176C258 166 242 156 252 146"/>
+                <path class="f-head" d="M246 152L252 144L255 154"/>
+                <text class="f-label" x="262" y="140">TRANSPIRATION</text>
+                <path class="f-axis" d="M332 250H536"/>
+                <path class="f-curve draw" pathLength="1" d="M332 246C364 244 380 236 398 208S444 112 474 100S518 92 536 92"/>
+                <path class="f-axis" d="M338 250v8M380 250v8M432 250v8M456 250v8M526 250v8"/>
+                <text class="f-tick" x="338" y="274" text-anchor="middle">VE</text>
+                <text class="f-tick" x="380" y="274" text-anchor="middle">V6</text>
+                <text class="f-tick" x="432" y="274" text-anchor="middle">VT</text>
+                <text class="f-tick" x="456" y="274" text-anchor="middle">R1</text>
+                <text class="f-tick" x="526" y="274" text-anchor="middle">R6</text>
+                <circle class="f-dot pulse" cx="456" cy="104" r="5"/>
+                <text class="f-label" x="332" y="60">PHENOLOGY</text>
+              </svg>
+              <figcaption><span class="fig-no">Fig. 4</span> Crop physiology. Conceptual drawing of phenology, transpiration and root-zone water uptake.</figcaption>
+            </figure>
+          </div>
+
+          <div class="chapter" data-chapter="data">
+            <div class="chapter-copy" id="chapter-data">
+              <p class="chapter-num"><span>02</span> Field &amp; geospatial data</p>
+              <h3>Measure it on the ground, and from above.</h3>
+              <p>At Lindsay I led R&amp;D field trials measuring soil moisture, phenology and yield, and combined crop simulations with satellite imagery to correct phenology estimates. In consulting and at CIBO I worked with field, hybrid-trial and climate data, farm-management records, field boundaries and NDVI composites — mapped in QGIS and Tableau.</p>
+              <ul class="chips" aria-label="Topics"><li>R&amp;D field trials</li><li>Satellite &amp; multispectral imagery</li><li>NDVI composites</li><li>Field boundaries</li><li>QGIS · Tableau</li></ul>
+              <a class="link-arrow" href="#project-phenology">Case file: phenology &amp; analytics <span aria-hidden="true">→</span></a>
+            </div>
+            <figure class="chapter-figure">
+              <p class="fig-step" aria-hidden="true">02 <span>/ 04</span></p>
+              <svg class="fig-svg" viewBox="0 0 560 440" aria-hidden="true" focusable="false">
+                <path class="f-boundary draw" pathLength="1" d="M92 52L470 40L478 416L98 424Z"/>
+                <text class="f-label" x="92" y="32">FIELD BOUNDARY</text>
+                <g class="f-raster" transform="translate(0 -10)"><path opacity="0.10" d="M131 141h18v18h-18zM151 141h18v18h-18zM131 161h18v18h-18zM151 161h18v18h-18zM171 161h18v18h-18zM191 161h18v18h-18zM131 181h18v18h-18zM151 181h18v18h-18zM171 181h18v18h-18zM111 201h18v18h-18zM131 201h18v18h-18zM151 201h18v18h-18zM111 221h18v18h-18zM131 221h18v18h-18zM351 221h18v18h-18zM371 221h18v18h-18zM391 221h18v18h-18zM331 241h18v18h-18zM351 241h18v18h-18zM371 241h18v18h-18zM391 241h18v18h-18zM311 261h18v18h-18zM331 261h18v18h-18zM351 261h18v18h-18zM371 261h18v18h-18zM391 261h18v18h-18zM311 281h18v18h-18zM331 281h18v18h-18zM351 281h18v18h-18zM371 281h18v18h-18zM391 281h18v18h-18zM411 281h18v18h-18zM311 301h18v18h-18zM331 301h18v18h-18zM351 301h18v18h-18zM371 301h18v18h-18zM391 301h18v18h-18zM411 301h18v18h-18z"/><path opacity="0.20" d="M151 121h18v18h-18zM171 121h18v18h-18zM171 141h18v18h-18zM191 141h18v18h-18zM191 181h18v18h-18zM411 181h18v18h-18zM171 201h18v18h-18zM371 201h18v18h-18zM391 201h18v18h-18zM411 201h18v18h-18zM151 221h18v18h-18zM331 221h18v18h-18zM411 221h18v18h-18zM111 241h18v18h-18zM311 241h18v18h-18zM411 241h18v18h-18zM291 261h18v18h-18zM411 261h18v18h-18zM291 281h18v18h-18zM291 301h18v18h-18zM291 321h18v18h-18zM311 321h18v18h-18zM331 321h18v18h-18zM351 321h18v18h-18zM371 321h18v18h-18zM391 321h18v18h-18zM251 381h18v18h-18z"/><path opacity="0.30" d="M251 61h18v18h-18zM271 61h18v18h-18zM291 61h18v18h-18zM191 81h18v18h-18zM171 101h18v18h-18zM191 101h18v18h-18zM211 101h18v18h-18zM371 101h18v18h-18zM191 121h18v18h-18zM211 121h18v18h-18zM391 121h18v18h-18zM211 141h18v18h-18zM411 141h18v18h-18zM211 161h18v18h-18zM391 161h18v18h-18zM411 161h18v18h-18zM211 181h18v18h-18zM371 181h18v18h-18zM391 181h18v18h-18zM191 201h18v18h-18zM211 201h18v18h-18zM231 201h18v18h-18zM251 201h18v18h-18zM271 201h18v18h-18zM291 201h18v18h-18zM311 201h18v18h-18zM331 201h18v18h-18zM351 201h18v18h-18zM431 201h18v18h-18zM171 221h18v18h-18zM191 221h18v18h-18zM211 221h18v18h-18zM231 221h18v18h-18zM251 221h18v18h-18zM271 221h18v18h-18zM291 221h18v18h-18zM311 221h18v18h-18zM431 221h18v18h-18zM131 241h18v18h-18zM151 241h18v18h-18zM231 241h18v18h-18zM251 241h18v18h-18zM271 241h18v18h-18zM291 241h18v18h-18zM431 241h18v18h-18zM271 261h18v18h-18zM271 281h18v18h-18zM271 301h18v18h-18zM271 321h18v18h-18zM251 341h18v18h-18zM271 341h18v18h-18zM291 341h18v18h-18zM311 341h18v18h-18zM331 341h18v18h-18zM351 341h18v18h-18zM371 341h18v18h-18zM231 361h18v18h-18zM251 361h18v18h-18zM271 361h18v18h-18zM291 361h18v18h-18zM311 361h18v18h-18zM331 361h18v18h-18zM351 361h18v18h-18zM271 381h18v18h-18zM291 381h18v18h-18z"/><path opacity="0.40" d="M211 81h18v18h-18zM231 81h18v18h-18zM251 81h18v18h-18zM271 81h18v18h-18zM351 81h18v18h-18zM231 101h18v18h-18zM251 101h18v18h-18zM351 101h18v18h-18zM231 121h18v18h-18zM351 121h18v18h-18zM371 121h18v18h-18zM231 141h18v18h-18zM351 141h18v18h-18zM371 141h18v18h-18zM391 141h18v18h-18zM231 161h18v18h-18zM311 161h18v18h-18zM331 161h18v18h-18zM351 161h18v18h-18zM371 161h18v18h-18zM231 181h18v18h-18zM251 181h18v18h-18zM271 181h18v18h-18zM291 181h18v18h-18zM311 181h18v18h-18zM331 181h18v18h-18zM351 181h18v18h-18zM171 241h18v18h-18zM191 241h18v18h-18zM211 241h18v18h-18zM131 261h18v18h-18zM191 261h18v18h-18zM211 261h18v18h-18zM231 261h18v18h-18zM251 261h18v18h-18zM251 281h18v18h-18zM251 301h18v18h-18zM251 321h18v18h-18zM231 341h18v18h-18zM211 361h18v18h-18z"/><path opacity="0.50" d="M291 81h18v18h-18zM311 81h18v18h-18zM331 81h18v18h-18zM271 101h18v18h-18zM331 101h18v18h-18zM251 121h18v18h-18zM331 121h18v18h-18zM251 141h18v18h-18zM311 141h18v18h-18zM331 141h18v18h-18zM251 161h18v18h-18zM271 161h18v18h-18zM291 161h18v18h-18zM151 261h18v18h-18zM171 261h18v18h-18zM131 281h18v18h-18zM151 281h18v18h-18zM171 281h18v18h-18zM191 281h18v18h-18zM211 281h18v18h-18zM231 281h18v18h-18zM131 301h18v18h-18zM151 301h18v18h-18zM171 301h18v18h-18zM191 301h18v18h-18zM231 301h18v18h-18zM151 321h18v18h-18zM171 321h18v18h-18zM231 321h18v18h-18zM171 341h18v18h-18zM211 341h18v18h-18zM191 361h18v18h-18z"/><path opacity="0.60" d="M291 101h18v18h-18zM311 101h18v18h-18zM271 121h18v18h-18zM291 121h18v18h-18zM311 121h18v18h-18zM271 141h18v18h-18zM291 141h18v18h-18zM211 301h18v18h-18zM191 321h18v18h-18zM211 321h18v18h-18zM191 341h18v18h-18z"/></g>
+                <circle class="f-pivot draw" pathLength="1" cx="280" cy="220" r="170"/>
+                <circle class="f-span" cx="280" cy="220" r="57"/>
+                <circle class="f-span" cx="280" cy="220" r="114"/>
+                <g class="pivot-arm"><path d="M280 220H450"/><circle cx="450" cy="220" r="3.5"/></g>
+                <circle class="f-dot" cx="280" cy="220" r="6"/>
+                <path class="f-cross" d="M200 158h12M206 152v12M352 280h12M358 274v12M226 308h12M232 302v12M332 140h12M338 134v12"/>
+                <text class="f-label" x="516" y="32" text-anchor="end">TRIAL OBSERVATIONS</text>
+                <path class="f-cross" d="M524 28h12M530 22v12"/>
+                <text class="f-label" x="536" y="438" text-anchor="end">IMAGERY CELLS · PIVOT FIELD</text>
+              </svg>
+              <figcaption><span class="fig-no">Fig. 5</span> Field &amp; geospatial data. Conceptual pivot field with illustrative imagery cells and trial points.</figcaption>
+            </figure>
+          </div>
+
+          <div class="chapter" data-chapter="models">
+            <div class="chapter-copy" id="chapter-models">
+              <p class="chapter-num"><span>03</span> Evaluated models</p>
+              <h3>Test the model before anyone relies on it.</h3>
+              <p>CornSoyWater was evaluated with five years of field data and a two-year irrigation experiment. At Lindsay I used R cross-validation to evaluate commercial crop models. At CIBO I ran SALUS sensitivity analyses on tillage, soil temperature and moisture, and planting and harvest dates, and compared simulated with measured residue-related outputs to assess model behavior and identify limitations.</p>
+              <ul class="chips" aria-label="Topics"><li>SALUS</li><li>Sensitivity analysis</li><li>R cross-validation</li><li>Calibration &amp; validation</li><li>Mixed models</li></ul>
+              <a class="link-arrow" href="#project-cibo">Case file: SALUS &amp; field data <span aria-hidden="true">→</span></a>
+            </div>
+            <figure class="chapter-figure">
+              <p class="fig-step" aria-hidden="true">03 <span>/ 04</span></p>
+              <svg class="fig-svg" viewBox="0 0 560 440" aria-hidden="true" focusable="false">
+                <path class="f-grid" d="M64 100H536M64 160H536M64 220H536"/>
+                <path class="f-axis" d="M64 48V300H536"/>
+                <text class="f-label" x="64" y="34">MODEL OUTPUT</text>
+                <text class="f-label" x="536" y="322" text-anchor="end">SEASON →</text>
+                <path class="f-curve draw" pathLength="1" d="M64 292C118 290 156 276 196 240S274 136 324 112S428 92 536 118"/>
+                <g class="f-obs">
+                  <path d="M104 272v20M150 258v24M196 232v28M240 182v28M284 134v24M330 106v24M382 94v20M432 80v24M488 94v20"/>
+                  <circle cx="104" cy="282" r="4.5"/><circle cx="150" cy="270" r="4.5"/><circle cx="196" cy="246" r="4.5"/><circle cx="240" cy="196" r="4.5"/><circle cx="284" cy="146" r="4.5"/><circle cx="330" cy="118" r="4.5"/><circle cx="382" cy="104" r="4.5"/><circle cx="432" cy="92" r="4.5"/><circle cx="488" cy="104" r="4.5"/>
+                </g>
+                <path class="f-legend-line" d="M376 40h28"/>
+                <text class="f-label" x="410" y="44">SIMULATED</text>
+                <circle class="f-legend-dot" cx="390" cy="62" r="4.5"/>
+                <text class="f-label" x="410" y="66">MEASURED</text>
+                <path class="f-axis" d="M64 384H536"/>
+                <text class="f-label" x="64" y="360">RESIDUALS</text>
+                <path class="f-resid" d="M104 384v-8M150 384v10M196 384v-6M240 384v12M284 384v-8M330 384v5M382 384v-10M432 384v7M488 384v-5"/>
+              </svg>
+              <figcaption><span class="fig-no">Fig. 6</span> Model evaluation. Schematic of a simulated-vs-measured comparison; points are illustrative, not study data.</figcaption>
+            </figure>
+          </div>
+
+          <div class="chapter" data-chapter="tools">
+            <div class="chapter-copy" id="chapter-tools">
+              <p class="chapter-num"><span>04</span> Decision tools</p>
+              <h3>Put it where decisions get made.</h3>
+              <p>I developed and maintained 30 crop models for FieldNET Advisor, Lindsay’s commercial irrigation platform, and co-invented a patented method that adjusts irrigation scheduling from estimated soil-water depletion. CornSoyWater carried my doctoral research into a web application for irrigation decisions, and on a Climate Corporation client project I improved growth-stage prediction error from about ±7 to ±3 days for a model deployed in a product.</p>
+              <ul class="chips" aria-label="Topics"><li>FieldNET Advisor</li><li>CornSoyWater</li><li>U.S. Patent 11,771,025</li><li>Model reports for product teams</li></ul>
+              <a class="link-arrow" href="#project-fieldnet">Case file: FieldNET Advisor <span aria-hidden="true">→</span></a>
+            </div>
+            <figure class="chapter-figure">
+              <p class="fig-step" aria-hidden="true">04 <span>/ 04</span></p>
+              <svg class="fig-svg" viewBox="0 0 560 440" aria-hidden="true" focusable="false">
+                <path class="f-axis" d="M64 48V300H536"/>
+                <text class="f-label" x="64" y="34">ROOT-ZONE DEPLETION</text>
+                <text class="f-label" x="536" y="322" text-anchor="end">DAYS →</text>
+                <path class="f-threshold" d="M64 112H536"/>
+                <text class="f-label f-label-warm" x="536" y="102" text-anchor="end">ALLOWABLE DEPLETION</text>
+                <path class="f-curve draw" pathLength="1" d="M64 286C104 262 146 170 178 112L182 282C222 250 262 168 296 112L300 276C326 250 352 214 378 186L382 236C414 206 446 148 470 112L474 280C498 262 518 240 536 220"/>
+                <path class="f-event" d="M180 112V340M298 112V340M472 112V340"/>
+                <path class="f-axis" d="M64 370H536"/>
+                <path class="f-ticks" d="M64 366v8M76 366v8M88 366v8M100 366v8M112 366v8M124 366v8M136 366v8M148 366v8M160 366v8M172 366v8M184 366v8M196 366v8M208 366v8M220 366v8M232 366v8M244 366v8M256 366v8M268 366v8M280 366v8M292 366v8M304 366v8M316 366v8M328 366v8M340 366v8M352 366v8M364 366v8M376 366v8M388 366v8M400 366v8M412 366v8M424 366v8M436 366v8M448 366v8M460 366v8M472 366v8M484 366v8M496 366v8M508 366v8M520 366v8M532 366v8"/>
+                <path class="f-drop" d="M180 336C188 346 188 356 180 356C172 356 172 346 180 336ZM298 336C306 346 306 356 298 356C290 356 290 346 298 336ZM472 336C480 346 480 356 472 356C464 356 464 346 472 336Z"/>
+                <path class="f-drop-outline" d="M380 336C388 346 388 356 380 356C372 356 372 346 380 336Z"/>
+                <text class="f-tick" x="180" y="402" text-anchor="middle">IRRIGATE</text>
+                <text class="f-tick" x="298" y="402" text-anchor="middle">IRRIGATE</text>
+                <text class="f-tick" x="380" y="402" text-anchor="middle">RAIN</text>
+                <text class="f-tick" x="472" y="402" text-anchor="middle">IRRIGATE</text>
+                <text class="f-label" x="64" y="430">SCHEDULE</text>
+              </svg>
+              <figcaption><span class="fig-no">Fig. 7</span> Decision support. Conceptual depletion-based irrigation scheduling; not output from any product.</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="work-section" id="work" aria-labelledby="work-title">
+    <!-- Case files: the long-form evidence. Rows stay native <details> for keyboard and no-JS use. -->
+    <section class="work" id="work" aria-labelledby="work-title">
       <div class="container">
-        <div class="section-intro reveal"><div><p class="eyebrow">SELECTED WORK / 2013–2026</p><h2 id="work-title">From a question in the field<br>to a tool <em>people can use.</em></h2></div><p class="section-aside">Models, experiments, and software.<br>Here’s how the pieces come together.</p></div>
-        <article class="featured-project reveal" id="project-cornsoywater">
-          <div class="feature-visual" aria-hidden="true">
-            <div class="feature-heading">CornSoyWater<span>IRRIGATION DECISION SUPPORT</span></div>
-            <svg class="water-diagram" viewBox="0 0 580 310" fill="none"><defs><linearGradient id="water-fill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#78ac82" stop-opacity=".32"/><stop offset="1" stop-color="#78ac82" stop-opacity="0"/></linearGradient></defs><path d="M35 242H545M35 172H545M35 102H545" stroke="#35614a" stroke-dasharray="3 6"/><path d="M35 226C95 222 105 175 145 164S210 190 248 137 305 151 348 101 407 121 446 68 505 76 545 43V270H35Z" fill="url(#water-fill)"/><path d="M35 226C95 222 105 175 145 164S210 190 248 137 305 151 348 101 407 121 446 68 505 76 545 43" stroke="#c2d8ad" stroke-width="3"/><path d="M35 192C91 196 106 213 147 207S210 173 251 184 308 168 348 174 405 134 445 146 501 121 545 131" stroke="#d4ba82" stroke-width="2"/><circle cx="348" cy="101" r="6" fill="#c2d8ad"/><circle cx="348" cy="101" r="14" stroke="#c2d8ad" stroke-opacity=".5"/><path d="M348 86V28H402" stroke="#c2d8ad" stroke-opacity=".5"/></svg>
-            <div class="visual-legend"><span><i class="legend-dot green"></i>Crop physiology</span><span><i class="legend-dot gold"></i>Soil-water balance</span></div><p class="visual-note">Conceptual illustration · not measured results</p>
+        <header class="section-head reveal">
+          <p class="section-index"><span>§ 03</span> Case files</p>
+          <h2 id="work-title">Selected work, <em>in detail.</em></h2>
+          <p class="section-dek">Five projects across doctoral research, a commercial platform and client work. Open any case file for the methods and tools.</p>
+        </header>
+
+        <article class="case-feature reveal" id="project-cornsoywater" aria-labelledby="cornsoywater-title">
+          <div class="case-feature-head">
+            <p class="case-kicker"><span>01</span> Doctoral research → web application · 2013–2016</p>
+            <h3 id="cornsoywater-title">CornSoyWater</h3>
+            <p class="case-standfirst">A model is only useful when it helps a grower decide.</p>
           </div>
-          <div class="feature-copy"><p class="project-kicker">01 / RESEARCH → WEB APPLICATION</p><h3>A model is useful when<br>it helps a grower decide.</h3><p>I developed CornSoyWater during my Ph.D., connecting process-based crop simulation with weather, soil, and management inputs for corn and soybean irrigation decisions.</p><p class="project-detail">Evaluated with five years of field data and a two-year irrigation experiment. Published in <em>Agricultural Water Management</em> in 2025.</p><div class="tags"><span>Process-based modeling</span><span>Field validation</span><span>Web systems</span></div><div class="project-links"><a class="text-link" href="https://doi.org/10.1016/j.agwat.2025.109454" target="_blank" rel="noopener noreferrer">Read the publication <span aria-hidden="true">↗</span></a><a class="text-link muted" href="https://digitalcommons.unl.edu/dissertations/AAI10247096/" target="_blank" rel="noopener noreferrer">Doctoral research <span aria-hidden="true">↗</span></a></div></div>
+          <div class="case-feature-body">
+            <div class="case-text">
+              <p>During my Ph.D. at the University of Nebraska–Lincoln, I developed CornSoyWater, a web application for corn and soybean irrigation decisions that connects process-based crop simulation with weather, soil and field-management inputs.</p>
+              <p>I evaluated model performance using five years of field data and a two-year irrigation experiment, examining soil-water balance, crop growth, root distribution, water uptake and yield under deficit irrigation.</p>
+              <ul class="chips" aria-label="Methods"><li>Process-based simulation</li><li>Soil-water balance</li><li>Deficit irrigation</li><li>Field evaluation</li><li>Web application</li></ul>
+            </div>
+            <aside class="citation" aria-label="Publication record">
+              <p class="citation-journal">Agricultural Water Management</p>
+              <p class="citation-meta">Vol. 313 · Article 109454 · 2025</p>
+              <p class="citation-title">CornSoyWater, a web application for irrigation decision support on corn and soybean</p>
+              <p class="citation-authors">Han, C., Yang, H., Payyala, D., et al.</p>
+              <div class="citation-links">
+                <a class="link-arrow" href="https://doi.org/10.1016/j.agwat.2025.109454" target="_blank" rel="noopener noreferrer">Read the publication <span aria-hidden="true">↗</span></a>
+                <a class="link-arrow muted" href="https://digitalcommons.unl.edu/dissertations/AAI10247096/" target="_blank" rel="noopener noreferrer">Doctoral research <span aria-hidden="true">↗</span></a>
+              </div>
+            </aside>
+          </div>
         </article>
-        <div class="project-list">
-          <details class="project-row reveal" id="project-fieldnet"><summary><span class="project-number">02</span><div class="project-row-heading"><p class="project-kicker">LINDSAY CORPORATION / 2018–2021</p><h3>Crop science at commercial scale.</h3><p>Thirty crop models. Satellite-informed phenology. Field trials.</p></div><span class="project-category">MODELING & PRODUCT</span><span class="expand-icon" aria-hidden="true">＋</span></summary><div class="project-expanded"><p>As a FieldNET Advisor Solutions Specialist (Data Scientist), I developed and maintained 30 crop models, including corn, soybean, and cotton, for a commercial irrigation platform. I prototyped in Python, evaluated performance with R cross-validation, and combined crop simulations with satellite imagery to correct phenology estimates.</p><p>I led R&D trials measuring soil moisture, phenology, and yield, supervised interns, and translated findings for product and agronomy teams. I also developed an Azure CNN workflow for emergence and flowering detection.</p><div class="tags"><span>Python & R</span><span>Satellite imagery</span><span>Field experiments</span></div><a class="text-link" href="https://patents.google.com/patent/US11771025B2/en" target="_blank" rel="noopener noreferrer">Related irrigation patent <span aria-hidden="true">↗</span></a></div></details>
-          <details class="project-row reveal" id="project-cibo"><summary><span class="project-number">03</span><div class="project-row-heading"><p class="project-kicker">CIBO TECHNOLOGIES / 2021–2024</p><h3>Understand what the model is telling you.</h3><p>SALUS sensitivity analysis and field-level agricultural data.</p></div><span class="project-category">SYSTEMS & ANALYTICS</span><span class="expand-icon" aria-hidden="true">＋</span></summary><div class="project-expanded"><p>I evaluated SALUS responses to tillage, management, soil temperature and moisture, and planting and harvest dates. I integrated manure parameters, explored nitrogen-related outputs, and compared simulated and measured residue-related outputs to assess model behavior and identify limitations.</p><p>Alongside modeling, I built Python and Scala workflows on AWS to clean, quality-check, and tabulate agricultural data for Verra verification. I created observation-ingestion scripts and documented analyses in Confluence, with code contributed through GitHub pull requests.</p><div class="tags"><span>SALUS</span><span>Sensitivity analysis</span><span>Python · Scala · AWS</span></div><a class="text-link" href="#fit">Explore the related role fit <span aria-hidden="true">→</span></a></div></details>
-          <details class="project-row reveal" id="project-phenology"><summary><span class="project-number">04</span><div class="project-row-heading"><p class="project-kicker">AGRICULTURAL CLIENT PROJECTS / 2017–2018</p><h3>Better predictions. Clearer decisions.</h3><p>Phenology, multi-location trials, and geospatial reporting.</p></div><span class="project-category">AGRONOMIC ANALYTICS</span><span class="expand-icon" aria-hidden="true">＋</span></summary><div class="project-expanded"><p>On a Climate Corporation client project, I improved crop growth-stage prediction error from approximately ±7 days to ±3 days for a model deployed in a product. Across consulting projects for Climate Corporation, DuPont Pioneer, and Monsanto, I analyzed environmental drivers and genotype-by-environment effects using mixed models and variance components.</p><p>I processed gigabyte-scale field, trial, and climate data using Spark, Python, and R on AWS EC2, mapped results with QGIS and Tableau, and delivered weekly slide briefings to leadership.</p><div class="tags"><span>Mixed models</span><span>G×E analysis</span><span>QGIS & Tableau</span></div><a class="text-link" href="#fit">View agronomy analytics fit <span aria-hidden="true">→</span></a></div></details>
-          <details class="project-row reveal" id="project-blueberry"><summary><span class="project-number">05</span><div class="project-row-heading"><p class="project-kicker">APPLIED PROJECT / COMPUTER VISION</p><h3>Take the model beyond the notebook.</h3><p>Blueberry maturity detection, from inference to a usable web tool.</p></div><span class="project-category">APPLIED AI & SOFTWARE</span><span class="expand-icon" aria-hidden="true">＋</span></summary><div class="project-expanded"><p>I built a crop-imagery application with YOLO and CPU inference in ONNX Runtime. The Flask application supports single-image and batch processing, maturity counts, and CSV export, connecting model development to a practical workflow.</p><div class="tags"><span>YOLO</span><span>ONNX Runtime</span><span>Flask</span><span>CSV export</span></div><a class="text-link" href="https://github.com/itsjameshan/blueberry" target="_blank" rel="noopener noreferrer">Explore the project code <span aria-hidden="true">↗</span></a></div></details>
+
+        <div class="case-list">
+          <details class="case reveal" id="project-fieldnet">
+            <summary>
+              <span class="case-num">02</span>
+              <span class="case-kicker">Lindsay Corporation · Aug 2018 – Jul 2021</span><h3 class="case-title">Crop science at commercial scale.</h3><span class="case-sub">Thirty crop models, satellite-informed phenology and R&amp;D field trials.</span>
+              <span class="case-tag">Modeling &amp; product</span>
+              <span class="case-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="case-body">
+              <div class="case-body-text">
+                <p>As FieldNET Advisor Solutions Specialist (Data Scientist), I developed and maintained 30 crop models — including corn, soybean and cotton — for Lindsay’s commercial FieldNET Advisor irrigation platform. I prototyped in Python and used R cross-validation to evaluate performance.</p>
+                <p>I combined crop simulations and satellite imagery to correct phenology estimates, and built an Azure CNN workflow to identify emergence and flowering from multispectral imagery.</p>
+                <p>I led R&amp;D field trials measuring soil moisture, phenology and yield, supervised interns, and translated model findings into reports for product and agronomy teams. I also co-invented a patented irrigation-scheduling method.</p>
+              </div>
+              <div class="case-body-side">
+                <p class="side-label">Methods &amp; tools</p>
+                <ul class="chips"><li>Python prototyping</li><li>R cross-validation</li><li>Satellite &amp; multispectral imagery</li><li>Azure CNN workflow</li><li>Field trials</li></ul>
+                <a class="link-arrow" href="https://patents.google.com/patent/US11771025B2/en" target="_blank" rel="noopener noreferrer">U.S. Patent 11,771,025 <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </details>
+
+          <details class="case reveal" id="project-cibo">
+            <summary>
+              <span class="case-num">03</span>
+              <span class="case-kicker">CIBO Technologies · Aug 2021 – Feb 2024</span><h3 class="case-title">Understand what the model is telling you.</h3><span class="case-sub">SALUS sensitivity analysis and quality-checked field-level data.</span>
+              <span class="case-tag">Model evaluation</span>
+              <span class="case-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="case-body">
+              <div class="case-body-text">
+                <p>As Quantitative Agricultural Scientist, I evaluated SALUS sensitivity to tillage depth and management, soil temperature and moisture, and planting and harvest dates to explain crop maturity and simulated soil responses.</p>
+                <p>I integrated manure parameters into SALUS, explored nitrogen-related outputs and tested residue parameters, then compared simulated and measured residue-related outputs to assess model behavior and identify limitations.</p>
+                <p>Alongside the modeling, I built Python and Scala workflows on AWS to clean, quality-check and tabulate field-level farm-management data for Verra carbon-credit verification, prepared field polygons and agricultural reports, and created scripts to ingest trial soil-moisture, temperature and CO₂ observations. Analyses were documented in Confluence, with code reviewed through GitHub pull requests.</p>
+              </div>
+              <div class="case-body-side">
+                <p class="side-label">Methods &amp; tools</p>
+                <ul class="chips"><li>SALUS</li><li>Sensitivity analysis</li><li>Simulated vs. measured residue outputs</li><li>Python · Scala · AWS</li><li>Verra verification data</li></ul>
+                <a class="link-arrow" href="#fit">Related role lens <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </details>
+
+          <details class="case reveal" id="project-phenology">
+            <summary>
+              <span class="case-num">04</span>
+              <span class="case-kicker">Consulting client projects · Feb 2017 – Aug 2018</span><h3 class="case-title">Better predictions, clearer decisions.</h3><span class="case-sub">Crop-stage prediction, multi-location trials and geospatial reporting.</span>
+              <span class="case-tag">Agronomic analytics</span>
+              <span class="case-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="case-body">
+              <div class="case-body-text">
+                <p>As a Data Scientist and Software Engineer with Novedea / Colaberry / QCI consulting, I worked on client projects for Climate Corporation, DuPont Pioneer and Monsanto. For Climate Corporation, I improved crop growth-stage prediction error from approximately ±7 days to ±3 days for a model deployed in a product, and analyzed soybean phenology and its environmental drivers.</p>
+                <p>I evaluated genotype-by-environment effects in multi-location trials using mixed models and variance components, with automated feature selection and quality checks, and used gradient boosting, random forests and logistic regression to investigate agronomic drivers.</p>
+                <p>I processed gigabyte-scale field, hybrid-trial and climate datasets from agricultural APIs and data warehouses using Spark, Python and R on AWS EC2, developed NDVI composites and true-color imagery for Pioneer projects, mapped results in QGIS, Tableau and Spotfire, and delivered weekly slide briefings to leadership.</p>
+              </div>
+              <div class="case-body-side">
+                <p class="side-label">Methods &amp; tools</p>
+                <ul class="chips"><li>Mixed models</li><li>Variance components</li><li>G×E analysis</li><li>NDVI composites</li><li>QGIS · Tableau · Spotfire</li><li>Spark · Python · R</li></ul>
+                <a class="link-arrow" href="?role=analytics#fit" data-lens-link="analytics">Analytics role lens <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </details>
+
+          <details class="case reveal" id="project-blueberry">
+            <summary>
+              <span class="case-num">05</span>
+              <span class="case-kicker">Applied project · computer vision</span><h3 class="case-title">Take the model beyond the notebook.</h3><span class="case-sub">Blueberry maturity detection, from inference to a usable web tool.</span>
+              <span class="case-tag">Applied software</span>
+              <span class="case-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="case-body">
+              <div class="case-body-text">
+                <p>I built a crop-imagery application for blueberry maturity: YOLO detection with CPU inference in ONNX Runtime, single-image and batch processing, maturity counts and CSV export — connecting model development to a usable web tool built with Flask.</p>
+              </div>
+              <div class="case-body-side">
+                <p class="side-label">Methods &amp; tools</p>
+                <ul class="chips"><li>YOLO</li><li>ONNX Runtime</li><li>Flask</li><li>Batch processing</li><li>CSV export</li></ul>
+                <a class="link-arrow" href="https://github.com/itsjameshan/blueberry" target="_blank" rel="noopener noreferrer">Project code on GitHub <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
     </section>
 
-    <section class="connections-section" aria-labelledby="connections-title">
+    <!-- Experience: exact dates, then the public record. -->
+    <section class="path" id="path" aria-labelledby="path-title">
       <div class="container">
-        <div class="section-intro reveal"><div><p class="eyebrow light">FOLLOW THE CONNECTIONS</p><h2 id="connections-title">One field.<br><em>Many ways to understand it.</em></h2></div><p class="section-aside">Explore the projects behind the capabilities.<br>Choose a point to see where it leads.</p></div>
-        <div class="connection-layout reveal">
-          <div class="project-map" aria-label="Interactive project map">
-            <canvas id="field-canvas" aria-hidden="true"></canvas>
-            <svg class="map-lines" viewBox="0 0 700 460" preserveAspectRatio="none" aria-hidden="true"><path d="M140 140L380 100 550 245 350 320 150 350 140 140M380 100L350 320M140 140L550 245M150 350L550 245"/></svg>
-            <button type="button" class="map-node active" data-project="cornsoywater" aria-pressed="true" style="--x:20%;--y:30%"><i aria-hidden="true"></i><span>CornSoyWater</span></button>
-            <button type="button" class="map-node" data-project="fieldnet" aria-pressed="false" style="--x:54%;--y:22%"><i aria-hidden="true"></i><span>FieldNET Advisor</span></button>
-            <button type="button" class="map-node" data-project="cibo" aria-pressed="false" style="--x:79%;--y:53%"><i aria-hidden="true"></i><span>SALUS & field data</span></button>
-            <button type="button" class="map-node" data-project="phenology" aria-pressed="false" style="--x:50%;--y:70%"><i aria-hidden="true"></i><span>Phenology & analytics</span></button>
-            <button type="button" class="map-node" data-project="blueberry" aria-pressed="false" style="--x:21%;--y:76%"><i aria-hidden="true"></i><span>Blueberry vision</span></button>
-            <span class="map-corner">SCIENCE × DATA × DELIVERY</span>
+        <header class="section-head reveal">
+          <p class="section-index"><span>§ 04</span> Experience</p>
+          <h2 id="path-title">Research roots, <em>industry practice.</em></h2>
+          <p class="section-dek">Selected industry experience and doctoral research, 2013–2024.</p>
+        </header>
+
+        <div class="timeline reveal" aria-hidden="true">
+          <div class="timeline-track">
+            <span class="seg seg-research" style="--start:0;--end:48"><b>UNL research</b></span>
+            <span class="seg seg-consult" style="--start:49;--end:67"><b>Consulting</b></span>
+            <span class="seg seg-lindsay" style="--start:67;--end:103"><b>Lindsay</b></span>
+            <span class="seg seg-cibo" style="--start:103;--end:134"><b>CIBO</b></span>
           </div>
-          <div class="map-detail" aria-live="polite" aria-atomic="true"><p class="eyebrow light" id="map-category">PROCESS-BASED MODELING</p><h3 id="map-title">CornSoyWater</h3><p id="map-description">Crop simulation, weather, soil, and field management come together in a web application for irrigation decisions.</p><p class="map-capabilities" id="map-capabilities">Crop physiology · Soil-water balance · Field evaluation</p><a class="text-link" id="map-link" href="#project-cornsoywater">Go deeper into this work <span aria-hidden="true">↗</span></a></div>
+          <div class="timeline-years"><span style="--m:0">2013</span><span style="--m:24">2015</span><span style="--m:48">2017</span><span style="--m:72">2019</span><span style="--m:96">2021</span><span style="--m:120">2023</span><span style="--m:134">Feb 2024</span></div>
         </div>
-        <p class="map-note">Five real projects. The connections show complementary capabilities, rather than a measured data network.</p>
+
+        <ol class="career">
+          <li class="reveal">
+            <p class="career-date">Aug 2021 – Feb 2024</p>
+            <div class="career-org"><h3>CIBO Technologies</h3><p class="career-role">Quantitative Agricultural Scientist</p></div>
+            <p class="career-text">SALUS sensitivity analysis and simulated-vs-measured residue comparisons; Python and Scala workflows on AWS that quality-checked farm-management data for Verra verification.</p>
+          </li>
+          <li class="reveal">
+            <p class="career-date">Aug 2018 – Jul 2021</p>
+            <div class="career-org"><h3>Lindsay Corporation</h3><p class="career-role">FieldNET Advisor Solutions Specialist (Data Scientist)</p></div>
+            <p class="career-text">Thirty commercial crop models, satellite-informed phenology corrections, R&amp;D field trials and a co-invented irrigation-scheduling patent.</p>
+          </li>
+          <li class="reveal">
+            <p class="career-date">Feb 2017 – Aug 2018</p>
+            <div class="career-org"><h3>Novedea / Colaberry / QCI consulting</h3><p class="career-role">Data Scientist and Software Engineer</p></div>
+            <p class="career-text">Client projects for Climate Corporation, DuPont Pioneer and Monsanto: crop-stage prediction, G×E analysis in multi-location trials and geospatial reporting.</p>
+          </li>
+          <li class="reveal">
+            <p class="career-date">2013 – 2016</p>
+            <div class="career-org"><h3>University of Nebraska–Lincoln</h3><p class="career-role">Graduate Research Assistant in Crop Modeling</p></div>
+            <p class="career-text">CornSoyWater, field evaluation and deficit-irrigation research. First place in the 2015 ASA-CSSA-SSSA annual meetings poster competition.</p>
+          </li>
+        </ol>
+
+        <div class="record reveal">
+          <div class="record-item">
+            <h3 class="record-label">Education</h3>
+            <p><strong>Ph.D., Agronomy and Horticulture</strong> (Crop Modeling), 2016</p>
+            <p><strong>M.S., Agronomy</strong> (Weed Science), 2012</p>
+            <p class="record-note">University of Nebraska–Lincoln</p>
+          </div>
+          <div class="record-item">
+            <h3 class="record-label">Publication</h3>
+            <p>Han, C., Yang, H., Payyala, D., et al. (2025). CornSoyWater, a web application for irrigation decision support on corn and soybean. <cite>Agricultural Water Management</cite>, 313, 109454.</p>
+            <a class="link-arrow" href="https://doi.org/10.1016/j.agwat.2025.109454" target="_blank" rel="noopener noreferrer">doi:10.1016/j.agwat.2025.109454 <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="record-item">
+            <h3 class="record-label">Patent</h3>
+            <p>Charling, K. A., and Han, C. J. (2023). System and method for adjusting irrigation system scheduling based on estimated soil water depletion. U.S. Patent 11,771,025. Lindsay Corporation.</p>
+            <a class="link-arrow" href="https://patents.google.com/patent/US11771025B2/en" target="_blank" rel="noopener noreferrer">Google Patents <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="fit-section" id="fit" aria-labelledby="fit-title">
+    <!-- Role fit: two lenses, two tailored résumés, each in PDF and Word. -->
+    <section class="fit" id="fit" aria-labelledby="fit-title">
       <div class="container">
-        <div class="section-intro reveal"><div><p class="eyebrow">FOR YOUR TEAM</p><h2 id="fit-title">The right science.<br><em>For the problem at hand.</em></h2></div><p class="section-aside">Two complementary ways I can contribute.<br>Choose the focus that fits your role.</p></div>
-        <div class="role-tabs" role="tablist" aria-label="Choose a role focus"><button id="tab-modeling" role="tab" type="button" aria-selected="true" aria-controls="role-panel" data-role="modeling">Agronomic systems modeling <span aria-hidden="true">↗</span></button><button id="tab-analytics" role="tab" type="button" aria-selected="false" aria-controls="role-panel" tabindex="-1" data-role="analytics">Agronomy & geospatial analytics <span aria-hidden="true">↗</span></button></div>
+        <header class="section-head reveal">
+          <p class="section-index"><span>§ 05</span> Role fit &amp; résumés</p>
+          <h2 id="fit-title">Two lenses, <em>one body of work.</em></h2>
+          <p class="section-dek">Choose the focus that matches your role. Each lens has its own tailored résumé, in PDF or Word.</p>
+        </header>
+
+        <div class="role-tabs" role="tablist" aria-label="Choose a role focus">
+          <button id="tab-modeling" role="tab" type="button" aria-selected="true" aria-controls="role-panel" data-role="modeling"><span class="tab-letter" aria-hidden="true">A</span><span class="tab-name">Agronomic systems modeling</span><span class="tab-meta">Primary focus</span></button>
+          <button id="tab-analytics" role="tab" type="button" aria-selected="false" aria-controls="role-panel" tabindex="-1" data-role="analytics"><span class="tab-letter" aria-hidden="true">B</span><span class="tab-name">Agronomy &amp; geospatial analytics</span><span class="tab-meta">Second focus</span></button>
+        </div>
+
         <div class="role-panel" id="role-panel" role="tabpanel" aria-labelledby="tab-modeling" tabindex="0">
-          <div class="role-summary"><p class="eyebrow" id="role-kicker">AGRONOMIC SYSTEMS MODELING</p><h3 id="role-heading">Understand the mechanisms.<br>Test the assumptions.<br><em>Make the model useful.</em></h3><p id="role-description">A Ph.D. in crop modeling and commercial experience translating crop physiology, phenology, and soil-water processes into decision tools.</p><a class="button button-green" id="resume-download" href="downloads/James_Han_Agronomic_Systems_Modeling_Resume.pdf" download>Download tailored résumé <span aria-hidden="true">↓</span></a><a class="docx-link" id="resume-docx" href="downloads/James_Han_Agronomic_Systems_Modeling_Resume.docx" download>Prefer Word? Download .docx</a></div>
-          <div class="fit-evidence" id="fit-evidence"><div><span>01</span><div><h4>Process-based crop models</h4><p>SALUS sensitivity analysis at CIBO; 30 commercial crop models at Lindsay; CornSoyWater doctoral research.</p><a href="#project-cibo">See the modeling work ↗</a></div></div><div><span>02</span><div><h4>Calibration, evaluation & experiments</h4><p>R cross-validation, field-data comparisons, and R&D trials collecting soil moisture, phenology, and yield.</p><a href="#project-fieldnet">See the field evidence ↗</a></div></div><div><span>03</span><div><h4>From analysis to shared tools</h4><p>Python, R, Scala, SQL, and cloud workflows; code review, model documentation, and clear technical reporting.</p><a href="#project-cornsoywater">See a decision-support system ↗</a></div></div></div>
+          <div class="role-summary">
+            <p class="role-kicker" id="role-kicker">Agronomic systems modeling</p>
+            <h3 id="role-heading">Understand the mechanisms.<br>Test the assumptions.<br><em>Make the model useful.</em></h3>
+            <p id="role-description">A Ph.D. in crop modeling and industry experience translating crop physiology, phenology and soil-water processes into commercial decision tools.</p>
+            <div class="role-downloads">
+              <a class="button button-primary" id="resume-download" href="downloads/James_Han_Agronomic_Systems_Modeling_Resume.pdf" download><span>Tailored résumé</span><span class="button-meta">PDF ↓</span></a>
+              <a class="button button-ghost" id="resume-docx" href="downloads/James_Han_Agronomic_Systems_Modeling_Resume.docx" download><span>Word</span><span class="button-meta">.docx ↓</span></a>
+            </div>
+          </div>
+          <div class="role-evidence">
+            <ol class="fit-evidence" id="fit-evidence">
+              <li><span class="fit-num">01</span><div><h4>Process-based crop models</h4><p>SALUS sensitivity analysis at CIBO; 30 commercial crop models at Lindsay; CornSoyWater doctoral research.</p><a href="#project-cibo">See the modeling work →</a></div></li>
+              <li><span class="fit-num">02</span><div><h4>Calibration, evaluation &amp; experiments</h4><p>R cross-validation, comparisons of simulated and measured residue-related outputs, and R&amp;D trials collecting soil moisture, phenology and yield.</p><a href="#project-fieldnet">See the field evidence →</a></div></li>
+              <li><span class="fit-num">03</span><div><h4>From analysis to shared tools</h4><p>Python, R, Scala and SQL workflows; GitHub pull requests, Confluence documentation and written model reports.</p><a href="#project-cornsoywater">See a decision-support system →</a></div></li>
+            </ol>
+            <div class="toolkit">
+              <p class="side-label">Toolkit from this résumé</p>
+              <ul class="chips" id="role-tools"><li>SALUS</li><li>Process-based simulation</li><li>Corn &amp; soybean phenology</li><li>Soil-water balance</li><li>Nutrient &amp; residue processes</li><li>Calibration &amp; validation</li><li>Python</li><li>R</li><li>Scala</li><li>SQL</li><li>Spark</li><li>AWS EC2</li><li>Azure</li><li>QGIS</li><li>Satellite imagery</li></ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="path-section" id="path" aria-labelledby="path-title">
-      <div class="container path-layout"><div class="path-intro reveal"><p class="eyebrow">SELECTED INDUSTRY EXPERIENCE</p><h2 id="path-title">Research roots.<br><em>Practical instincts.</em></h2><p>My work has moved between crop science, analytical teams, and commercial systems. The common thread is making complex agricultural processes understandable and useful.</p><div class="education"><span>EDUCATION</span><p>Ph.D., Agronomy & Horticulture<br><small>Crop Modeling · Nebraska–Lincoln · 2016</small></p><p>M.S., Agronomy<br><small>Weed Science · Nebraska–Lincoln · 2012</small></p></div></div><ol class="career-list"><li class="reveal"><span class="career-date">AUG 2021 — FEB 2024</span><h3>CIBO Technologies</h3><p class="career-title">Quantitative Agricultural Scientist</p><p>Crop-model sensitivity, agricultural data workflows, and analysis for carbon-credit verification.</p></li><li class="reveal"><span class="career-date">AUG 2018 — JUL 2021</span><h3>Lindsay Corporation</h3><p class="career-title">FieldNET Advisor Solutions Specialist (Data Scientist)</p><p>Commercial crop modeling, satellite-informed phenology, irrigation R&D, and a co-invented scheduling patent.</p></li><li class="reveal"><span class="career-date">FEB 2017 — AUG 2018</span><h3>Agricultural consulting</h3><p class="career-title">Data Scientist & Software Engineer</p><p>Novedea / Colaberry / QCI consulting. Client projects for Climate Corporation, DuPont Pioneer, and Monsanto.</p></li><li class="reveal"><span class="career-date">2013 — 2016</span><h3>University of Nebraska–Lincoln</h3><p class="career-title">Graduate Research Assistant · Crop Modeling</p><p>CornSoyWater, field experiments, and process-based irrigation decision support.</p></li></ol></div>
+    <!-- Contact. -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <img class="contact-art" src="assets/field-landscape.svg" width="720" height="720" alt="" loading="lazy" decoding="async">
+      <div class="container contact-inner">
+        <p class="section-index on-dark reveal"><span>§ 06</span> Contact</p>
+        <h2 id="contact-title" class="reveal">Let’s talk about <em>your models.</em></h2>
+        <p class="contact-dek reveal">If your team builds crop models — or the decisions that depend on them — I’d be glad to hear about the work.</p>
+        <a class="contact-email reveal" href="mailto:itsjameschan@gmail.com?subject=Agronomic%20modeling%20role">itsjameschan@gmail.com <span aria-hidden="true">↗</span></a>
+        <div class="contact-actions reveal">
+          <button class="copy-email" type="button" id="copy-email">Copy email</button>
+          <a href="https://www.linkedin.com/in/james-han-4b68493a" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/itsjameshan" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="downloads/James_Han_Agronomic_Systems_Modeling_Resume.pdf" download>Modeling résumé <span aria-hidden="true">↓</span></a>
+          <a href="downloads/James_Han_Agronomy_Analytics_Resume.pdf" download>Analytics résumé <span aria-hidden="true">↓</span></a>
+          <span id="copy-status" class="copy-status" role="status"></span>
+        </div>
+      </div>
     </section>
-
-    <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="container"><div class="contact-top"><p class="eyebrow light">LET’S BUILD SOMETHING USEFUL</p><span class="small-mark" aria-hidden="true">✳</span></div><h2 id="contact-title">Better agricultural decisions<br>start with <em>a conversation.</em></h2><p>If your team is connecting agricultural science with data and software, I’d love to talk about the work.</p><div class="contact-actions"><a class="button button-cream" href="mailto:itsjameschan@gmail.com?subject=Let%27s%20talk%20about%20an%20agronomic%20role">Start a conversation <span aria-hidden="true">↗</span></a><button class="copy-email" type="button" id="copy-email">Copy email <span aria-hidden="true">↗</span></button><span id="copy-status" class="copy-status" role="status"></span></div><a class="email-link" href="mailto:itsjameschan@gmail.com">itsjameschan@gmail.com</a><footer class="site-footer"><a class="wordmark" href="#top">James Han<span>Ph.D.</span></a><div><a href="https://www.linkedin.com/in/james-han-4b68493a" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/itsjameshan" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="#fit">Résumé ↓</a></div><span>© 2026 James Han</span></footer></div></section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="wordmark" href="#top">James Han<span>Ph.D.</span></a>
+      <p>Figures come from my résumés and linked public records. Visuals labeled conceptual, illustrative or decorative are drawings, not measured data.</p>
+      <p class="footer-meta">© 2026 James Han · A static site with no tracking</p>
+    </div>
+  </footer>
 </body>
 </html>

@@ -1,12 +1,13 @@
 # James Han, Ph.D.
 
-> Agricultural scientist working across crop modeling, agricultural analytics, geospatial data, and practical software systems.
+> Agricultural scientist (Ph.D., crop modeling) focused on agronomic systems modeling, with agronomy and geospatial analytics as a second focus: crop physiology → field and geospatial data → evaluated models → commercial decision tools.
 
 ## Portfolio
 
 - [Personal website](https://itsjameshan.github.io/): selected industry experience and project evidence.
-- [Modeling résumé](https://itsjameshan.github.io/downloads/James_Han_Agronomic_Systems_Modeling_Resume.pdf)
-- [Analytics résumé](https://itsjameshan.github.io/downloads/James_Han_Agronomy_Analytics_Resume.pdf)
+- [Modeling lens](https://itsjameshan.github.io/?role=modeling#fit) and [analytics lens](https://itsjameshan.github.io/?role=analytics#fit)
+- [Modeling résumé](https://itsjameshan.github.io/downloads/James_Han_Agronomic_Systems_Modeling_Resume.pdf) ([Word](https://itsjameshan.github.io/downloads/James_Han_Agronomic_Systems_Modeling_Resume.docx))
+- [Analytics résumé](https://itsjameshan.github.io/downloads/James_Han_Agronomy_Analytics_Resume.pdf) ([Word](https://itsjameshan.github.io/downloads/James_Han_Agronomy_Analytics_Resume.docx))
 - [GitHub](https://github.com/itsjameshan)
 
 ## Public evidence

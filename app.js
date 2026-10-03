@@ -1,100 +1,144 @@
 'use strict';
 
 // All content is local and drawn from the two tailored résumés. No API keys or tracking.
+window.jhReady = true;
+document.documentElement.classList.add('js');
+
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 const roles = {
   modeling: {
-    kicker: 'AGRONOMIC SYSTEMS MODELING',
+    kicker: 'Agronomic systems modeling',
     heading: ['Understand the mechanisms.', 'Test the assumptions.', 'Make the model useful.'],
-    description: 'A Ph.D. in crop modeling and commercial experience translating crop physiology, phenology, and soil-water processes into decision tools.',
+    description: 'A Ph.D. in crop modeling and industry experience translating crop physiology, phenology and soil-water processes into commercial decision tools.',
     resume: 'James_Han_Agronomic_Systems_Modeling_Resume',
+    heroLabel: 'Download modeling résumé',
     evidence: [
       ['Process-based crop models', 'SALUS sensitivity analysis at CIBO; 30 commercial crop models at Lindsay; CornSoyWater doctoral research.', 'See the modeling work', '#project-cibo'],
-      ['Calibration, evaluation & experiments', 'R cross-validation, field-data comparisons, and R&D trials collecting soil moisture, phenology, and yield.', 'See the field evidence', '#project-fieldnet'],
-      ['From analysis to shared tools', 'Python, R, Scala, SQL, and cloud workflows; code review, model documentation, and clear technical reporting.', 'See a decision-support system', '#project-cornsoywater']
-    ]
+      ['Calibration, evaluation & experiments', 'R cross-validation, comparisons of simulated and measured residue-related outputs, and R&D trials collecting soil moisture, phenology and yield.', 'See the field evidence', '#project-fieldnet'],
+      ['From analysis to shared tools', 'Python, R, Scala and SQL workflows; GitHub pull requests, Confluence documentation and written model reports.', 'See a decision-support system', '#project-cornsoywater']
+    ],
+    tools: ['SALUS', 'Process-based simulation', 'Corn & soybean phenology', 'Soil-water balance', 'Nutrient & residue processes', 'Calibration & validation', 'Python', 'R', 'Scala', 'SQL', 'Spark', 'AWS EC2', 'Azure', 'QGIS', 'Satellite imagery']
   },
   analytics: {
-    kicker: 'AGRONOMY & GEOSPATIAL ANALYTICS',
+    kicker: 'Agronomy & geospatial analytics',
     heading: ['Connect the data.', 'Find the agronomic signal.', 'Make the results clear.'],
-    description: 'Agronomic context, statistical analysis, and spatial visualization — from field, weather, and soil data to findings your team can act on.',
+    description: 'Agronomic context, statistical analysis and spatial visualization — from field, trial, weather and soil data to clear findings for product, agronomy and business teams.',
     resume: 'James_Han_Agronomy_Analytics_Resume',
+    heroLabel: 'Download analytics résumé',
     evidence: [
-      ['Field & geospatial data', 'Farm-management records, field boundaries, satellite imagery, weather, and soil inputs; QGIS, Tableau, and Spotfire.', 'See the agricultural analytics', '#project-phenology'],
-      ['Statistical analysis with agronomic context', 'Mixed models, variance components, G×E analysis, R cross-validation, and crop-stage prediction.', 'See the prediction work', '#project-phenology'],
-      ['Analysis that travels beyond the team', 'Quality-checked Python, R, SQL, and Spark workflows; written reports and weekly slide briefings to leadership.', 'See the data workflows', '#project-cibo']
-    ]
+      ['Field & geospatial data', 'Farm-management records, field boundaries, satellite imagery and NDVI, weather and soil inputs; QGIS, Tableau and Spotfire.', 'See the agricultural analytics', '#project-phenology'],
+      ['Statistical analysis with agronomic context', 'Mixed models, variance components, G×E analysis in multi-location trials, R cross-validation and crop-stage prediction.', 'See the prediction work', '#project-phenology'],
+      ['Analysis that travels beyond the team', 'Quality-checked Python, R, SQL and Spark workflows; written reports and weekly slide briefings to leadership.', 'See the data workflows', '#project-cibo']
+    ],
+    tools: ['Field & hybrid trials', 'Farm-management data', 'Phenology', 'QA/QC', 'Mixed models', 'Variance components', 'QGIS', 'Tableau', 'Spotfire', 'Satellite imagery & NDVI', 'Python', 'R', 'SQL', 'Spark', 'AWS EC2', 'Azure']
   }
 };
 
-const projects = {
-  cornsoywater: ['PROCESS-BASED MODELING', 'CornSoyWater', 'Crop simulation, weather, soil, and field management come together in a web application for irrigation decisions.', 'Crop physiology · Soil-water balance · Field evaluation'],
-  fieldnet: ['COMMERCIAL CROP SYSTEMS', 'FieldNET Advisor', 'Thirty crop models for a commercial irrigation platform, informed by satellite imagery and hands-on R&D field trials.', 'Phenology · Cross-validation · Commercial delivery'],
-  cibo: ['MODEL BEHAVIOR & AGRICULTURAL DATA', 'SALUS & field data', 'Sensitivity analysis makes model behavior clearer. Quality-checked agricultural data supports verification and reporting workflows.', 'SALUS · Management sensitivity · Python & Scala'],
-  phenology: ['AGRONOMY & GEOSPATIAL ANALYTICS', 'Phenology & analytics', 'Environmental drivers, multi-location trials, and geospatial reporting connect statistical findings with agronomic decisions.', 'G×E analysis · Mixed models · QGIS & Tableau'],
-  blueberry: ['COMPUTER VISION → USABLE SOFTWARE', 'Blueberry vision', 'A crop-imagery application brings YOLO detection into a practical workflow, with batch processing, maturity counts, and CSV export.', 'YOLO · ONNX Runtime · Flask']
+const lensPrompts = {
+  modeling: ['Hiring for agronomy or geospatial analytics?', 'analytics', 'Switch to the analytics lens'],
+  analytics: ['Hiring for crop or systems modeling?', 'modeling', 'Switch to the modeling lens']
 };
 
+/* Header and mobile menu */
 const header = document.getElementById('site-header');
-const menuButton = document.querySelector('.menu-toggle');
-const roleTabs = [...document.querySelectorAll('[data-role]')];
+const menuButton = header.querySelector('.menu-toggle');
+const isMenuOpen = () => menuButton.getAttribute('aria-expanded') === 'true';
 
 function setMenu(open) {
   header.classList.toggle('menu-open', open);
   menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.querySelector('span').textContent = open ? '−' : '＋';
 }
 
-menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
+menuButton.addEventListener('click', () => setMenu(!isMenuOpen()));
 document.querySelectorAll('#main-nav a').forEach(link => link.addEventListener('click', () => setMenu(false)));
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+  if (event.key === 'Escape' && isMenuOpen()) {
     setMenu(false);
     menuButton.focus();
   }
 });
-window.addEventListener('resize', () => { if (window.innerWidth > 600) setMenu(false); });
-function updateHeader() { header.classList.toggle('scrolled', window.scrollY > 70); }
+document.addEventListener('click', event => {
+  if (isMenuOpen() && !header.contains(event.target)) setMenu(false);
+});
+window.matchMedia('(min-width: 901px)').addEventListener('change', event => { if (event.matches) setMenu(false); });
+
+function updateHeader() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
 window.addEventListener('scroll', updateHeader, { passive: true });
 updateHeader();
+
+/* Role lenses: tabs, tailored résumés and the hero shortcut */
+const roleTabs = [...document.querySelectorAll('[role="tab"][data-role]')];
+const rolePanel = document.getElementById('role-panel');
+
+function makeEvidenceItem([title, description, label, href], index) {
+  const item = document.createElement('li');
+  const number = document.createElement('span');
+  number.className = 'fit-num';
+  number.textContent = String(index + 1).padStart(2, '0');
+  const copy = document.createElement('div');
+  const titleElement = document.createElement('h4');
+  titleElement.textContent = title;
+  const descriptionElement = document.createElement('p');
+  descriptionElement.textContent = description;
+  const link = document.createElement('a');
+  link.href = href;
+  link.textContent = `${label} →`;
+  copy.append(titleElement, descriptionElement, link);
+  item.append(number, copy);
+  return item;
+}
 
 function selectRole(key, updateUrl = true) {
   const role = roles[key];
   if (!role) return;
+  const changed = rolePanel.getAttribute('aria-labelledby') !== `tab-${key}`;
   roleTabs.forEach(tab => {
     const active = tab.dataset.role === key;
     tab.setAttribute('aria-selected', String(active));
     tab.tabIndex = active ? 0 : -1;
   });
-  document.getElementById('role-panel').setAttribute('aria-labelledby', `tab-${key}`);
+  rolePanel.setAttribute('aria-labelledby', `tab-${key}`);
   document.getElementById('role-kicker').textContent = role.kicker;
   const heading = document.getElementById('role-heading');
   heading.replaceChildren();
   role.heading.forEach((line, index) => {
     if (index) heading.append(document.createElement('br'));
-    const item = index === 2 ? document.createElement('em') : document.createTextNode(line);
-    if (index === 2) item.textContent = line;
-    heading.append(item);
+    if (index === role.heading.length - 1) {
+      const emphasis = document.createElement('em');
+      emphasis.textContent = line;
+      heading.append(emphasis);
+    } else {
+      heading.append(document.createTextNode(line));
+    }
   });
   document.getElementById('role-description').textContent = role.description;
   document.getElementById('resume-download').href = `downloads/${role.resume}.pdf`;
   document.getElementById('resume-docx').href = `downloads/${role.resume}.docx`;
-  const evidence = document.getElementById('fit-evidence');
-  evidence.replaceChildren(...role.evidence.map(([title, description, label, href], index) => {
-    const row = document.createElement('div');
-    const number = document.createElement('span');
-    number.textContent = String(index + 1).padStart(2, '0');
-    const copy = document.createElement('div');
-    const titleElement = document.createElement('h4');
-    titleElement.textContent = title;
-    const descriptionElement = document.createElement('p');
-    descriptionElement.textContent = description;
-    const link = document.createElement('a');
-    link.href = href;
-    link.textContent = `${label} ↗`;
-    copy.append(titleElement, descriptionElement, link);
-    row.append(number, copy);
-    return row;
+  document.getElementById('fit-evidence').replaceChildren(...role.evidence.map(makeEvidenceItem));
+  document.getElementById('role-tools').replaceChildren(...role.tools.map(tool => {
+    const chip = document.createElement('li');
+    chip.textContent = tool;
+    return chip;
   }));
+
+  // The hero résumé button and lens shortcut follow the active lens.
+  document.querySelectorAll('[data-resume="pdf"]').forEach(link => { link.href = `downloads/${role.resume}.pdf`; });
+  document.querySelectorAll('[data-resume-label]').forEach(label => { label.textContent = role.heroLabel; });
+  const [prompt, otherKey, otherLabel] = lensPrompts[key];
+  document.querySelectorAll('[data-lens-switch]').forEach(line => {
+    line.querySelector('[data-lens-prompt]').textContent = prompt;
+    const link = line.querySelector('[data-lens-link]');
+    link.dataset.lensLink = otherKey;
+    link.href = `?role=${otherKey}#fit`;
+    link.firstChild.textContent = `${otherLabel} `;
+  });
+
+  if (changed && !reducedMotion.matches) {
+    rolePanel.classList.remove('is-switching');
+    void rolePanel.offsetWidth;
+    rolePanel.classList.add('is-switching');
+  }
   if (!updateUrl) return;
   try {
     const url = new URL(window.location.href);
@@ -119,28 +163,34 @@ roleTabs.forEach(tab => {
     }
   });
 });
+
+// Lens shortcuts switch in place and add a history entry, so Back returns to the previous lens.
+document.addEventListener('click', event => {
+  const link = event.target.closest('[data-lens-link]');
+  if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  const key = link.dataset.lensLink;
+  if (!Object.hasOwn(roles, key)) return;
+  event.preventDefault();
+  selectRole(key, false);
+  try {
+    const url = new URL(window.location.href);
+    url.searchParams.set('role', key);
+    url.hash = 'fit';
+    history.pushState(null, '', url);
+  } catch { /* Local files cannot always rewrite history. */ }
+  document.getElementById('fit').scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
+  document.getElementById(`tab-${key}`).focus({ preventScroll: true });
+});
+
 const requestedRole = new URLSearchParams(window.location.search).get('role');
-if (requestedRole && Object.hasOwn(roles, requestedRole)) selectRole(requestedRole);
+if (requestedRole && Object.hasOwn(roles, requestedRole)) selectRole(requestedRole, false);
 window.addEventListener('popstate', () => {
   const key = new URLSearchParams(window.location.search).get('role');
   selectRole(key && Object.hasOwn(roles, key) ? key : 'modeling', false);
+  revealLinkedProject(window.location.hash);
 });
 
-document.querySelectorAll('[data-project]').forEach(button => button.addEventListener('click', () => {
-  const project = projects[button.dataset.project];
-  if (!project) return;
-  document.querySelectorAll('[data-project]').forEach(node => {
-    const active = node === button;
-    node.classList.toggle('active', active);
-    node.setAttribute('aria-pressed', String(active));
-  });
-  ['map-category', 'map-title', 'map-description', 'map-capabilities'].forEach((id, index) => {
-    document.getElementById(id).textContent = project[index];
-  });
-  document.getElementById('map-link').href = `#project-${button.dataset.project}`;
-}));
-
-// Open collapsed case studies when their links are followed, including initial deep links.
+/* Open collapsed case files when their links are followed, including initial deep links. */
 function revealLinkedProject(hash) {
   if (!hash.startsWith('#project-')) return;
   const target = document.getElementById(hash.slice(1));
@@ -153,6 +203,83 @@ document.addEventListener('click', event => {
 window.addEventListener('hashchange', () => revealLinkedProject(window.location.hash));
 revealLinkedProject(window.location.hash);
 
+/* Fig. 1: the prediction window narrows from ±7 to ±3 days. */
+const predictionWindow = document.querySelector('[data-window]');
+if (predictionWindow) {
+  const buttons = [...predictionWindow.querySelectorAll('button[data-error]')];
+  const readout = predictionWindow.querySelector('[data-window-readout]');
+  const readouts = {
+    7: 'Before: ±7 days — the stage could land anywhere in a window of about two weeks.',
+    3: 'After: ±3 days — the window narrows to about one week.'
+  };
+  let touched = false;
+  const setError = value => {
+    predictionWindow.dataset.error = value;
+    buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.error === value)));
+    readout.textContent = readouts[value];
+  };
+  buttons.forEach(button => button.addEventListener('click', () => {
+    touched = true;
+    readout.setAttribute('aria-live', 'polite');
+    setError(button.dataset.error);
+  }));
+  // Play the improvement once when the figure comes into view; reduced motion shows the result directly.
+  if (!reducedMotion.matches && 'IntersectionObserver' in window) {
+    readout.setAttribute('aria-live', 'off');
+    setError('7');
+    const observer = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      observer.disconnect();
+      window.setTimeout(() => {
+        if (!touched) setError('3');
+        readout.setAttribute('aria-live', 'polite');
+      }, 900);
+    }, { threshold: .6 });
+    observer.observe(predictionWindow.querySelector('.window-strip'));
+  }
+}
+
+/* Method chapters: the copy at mid-screen chooses the active figure. */
+const chapters = [...document.querySelectorAll('[data-chapter]')];
+const wideLayout = window.matchMedia('(min-width: 960px)');
+let methodSeen = false;
+
+function syncDrawn() {
+  chapters.forEach(chapter => {
+    const drawn = wideLayout.matches ? methodSeen && chapter.classList.contains('is-active') : chapter.dataset.seen === 'true';
+    chapter.classList.toggle('is-drawn', drawn);
+  });
+}
+
+function activateChapter(active) {
+  chapters.forEach(chapter => chapter.classList.toggle('is-active', chapter === active));
+  syncDrawn();
+}
+
+if (chapters.length && 'IntersectionObserver' in window) {
+  const copyObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) activateChapter(entry.target.closest('[data-chapter]'));
+    });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  const figureObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      methodSeen = true;
+      entry.target.closest('[data-chapter]').dataset.seen = 'true';
+    });
+    syncDrawn();
+  }, { threshold: .3 });
+  chapters.forEach(chapter => {
+    copyObserver.observe(chapter.querySelector('.chapter-copy'));
+    figureObserver.observe(chapter.querySelector('.chapter-figure'));
+  });
+  wideLayout.addEventListener('change', syncDrawn);
+} else {
+  chapters.forEach(chapter => chapter.classList.add('is-drawn'));
+}
+
+/* Copy email */
 document.getElementById('copy-email').addEventListener('click', async () => {
   const status = document.getElementById('copy-status');
   try {
@@ -160,82 +287,27 @@ document.getElementById('copy-email').addEventListener('click', async () => {
     await navigator.clipboard.writeText('itsjameschan@gmail.com');
     status.textContent = 'Email copied.';
   } catch {
-    status.textContent = 'Select the email address below to copy it, or click it to open your email app.';
+    status.textContent = 'Copying is unavailable here. Select the address above, or click it to open your email app.';
   }
 });
 
+/* Scroll reveal */
+const revealTargets = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(entries => {
+  const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
     });
-  }, { threshold: 0.06 });
-  document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
-  document.documentElement.classList.add('js');
+  }, { threshold: .08, rootMargin: '0px 0px -5% 0px' });
+  revealTargets.forEach(element => revealObserver.observe(element));
+} else {
+  revealTargets.forEach(element => element.classList.add('is-visible'));
 }
 
-// Decorative contour field, never presented as observations or simulation output.
-const canvas = document.getElementById('field-canvas');
-const context = canvas.getContext('2d');
-const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-if (context) {
-  let width = 0;
-  let height = 0;
-  let frame = 0;
-  let inView = false;
-  let points = [];
-  function sizeCanvas() {
-    width = canvas.clientWidth;
-    height = canvas.clientHeight;
-    const ratio = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = Math.round(width * ratio);
-    canvas.height = Math.round(height * ratio);
-    context.setTransform(ratio, 0, 0, ratio, 0, 0);
-    points = [];
-    for (let row = 0; row < 27; row++) {
-      for (let col = 0; col < 53; col++) {
-        const x = (col / 52) * width;
-        const y = (row / 26) * height + Math.sin(col * .115 + row * .095) * 27;
-        const distance = Math.hypot((x - width * .48) / width, (y - height * .52) / height);
-        points.push({ x, y, row, col, alpha: Math.max(.035, .27 - distance * .27) });
-      }
-    }
-    draw(0);
-  }
-  function draw(time) {
-    context.clearRect(0, 0, width, height);
-    for (const point of points) {
-      const wave = motionPreference.matches ? 0 : Math.sin(point.col * .14 + point.row * .1 - time * .00022) * .035;
-      context.fillStyle = `rgba(183, 205, 149, ${Math.max(.025, point.alpha + wave)})`;
-      context.beginPath();
-      context.arc(point.x, point.y, .9, 0, Math.PI * 2);
-      context.fill();
-    }
-  }
-  function animate(time) {
-    frame = 0;
-    if (!inView || document.hidden || motionPreference.matches) return;
-    draw(time);
-    frame = requestAnimationFrame(animate);
-  }
-  function syncAnimation() {
-    if (frame) cancelAnimationFrame(frame);
-    frame = 0;
-    if (inView && !document.hidden && !motionPreference.matches) frame = requestAnimationFrame(animate);
-    else draw(0);
-  }
-  if ('ResizeObserver' in window) new ResizeObserver(sizeCanvas).observe(canvas);
-  else window.addEventListener('resize', sizeCanvas);
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(entries => {
-      inView = entries[0].isIntersecting;
-      syncAnimation();
-    }).observe(canvas);
-  }
-  motionPreference.addEventListener('change', syncAnimation);
-  document.addEventListener('visibilitychange', syncAnimation);
-  sizeCanvas();
-}
+// Printing shows every case file and revealed section.
+window.addEventListener('beforeprint', () => {
+  document.querySelectorAll('details.case').forEach(details => { details.open = true; });
+  revealTargets.forEach(element => element.classList.add('is-visible'));
+});
