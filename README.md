@@ -31,7 +31,7 @@ Role-focused links:
 - https://itsjameshan.github.io/?role=modeling#fit
 - https://itsjameshan.github.io/?role=analytics#fit
 
-The two downloadable résumés are verified snapshots of the October 3, 2026 tailored documents. The public portrait is retained from the previous website (`avatar.jpg`, unchanged); `assets/portrait-hero.jpg` is the same photo at the same resolution with only the presentation-slide text behind the head smoothed out, used in the hero and social card. Source Serif 4 is distributed under the SIL Open Font License in `assets/OFL.txt`.
+The two downloadable résumés are publication copies of the October 3, 2026 tailored documents, with the same CIBO date shown in the career timeline. The public portrait is retained from the previous website (`avatar.jpg`, unchanged); `assets/portrait-hero.jpg` is the same photo at the same resolution with only the presentation-slide text behind the head smoothed out, used in the hero and social card. Source Serif 4 is distributed under the SIL Open Font License in `assets/OFL.txt`.
 
 Public source records:
 

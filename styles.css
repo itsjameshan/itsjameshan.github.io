@@ -343,7 +343,7 @@ figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); }
 .path { background: var(--paper-2); }
 .timeline { margin-bottom: 56px; }
 .timeline-track { position: relative; height: 54px; border-radius: 999px; background: rgba(19, 38, 29, .05); }
-.seg { position: absolute; top: 0; bottom: 0; left: calc(var(--start) / 134 * 100% + 2px); width: calc((var(--end) - var(--start)) / 134 * 100% - 4px); display: flex; align-items: center; padding: 0 16px; overflow: hidden; border-radius: 999px; }
+.seg { position: absolute; top: 0; bottom: 0; left: calc(var(--start) / var(--timeline-months, 134) * 100% + 2px); width: calc((var(--end) - var(--start)) / var(--timeline-months, 134) * 100% - 4px); display: flex; align-items: center; padding: 0 16px; overflow: hidden; border-radius: 999px; }
 .seg b { font-size: 13px; font-weight: 600; white-space: nowrap; }
 .seg-research { background: var(--wheat); color: var(--forest-3); }
 .seg-consult { background: var(--mint); color: var(--forest-3); }
@@ -355,7 +355,7 @@ figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); }
 .js .timeline .seg:nth-child(4) { transition-delay: .6s; }
 .js .timeline.is-visible .seg { transform: none; }
 .timeline-years { position: relative; height: 22px; margin-top: 12px; font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
-.timeline-years span { position: absolute; left: calc(var(--m) / 134 * 100%); white-space: nowrap; }
+.timeline-years span { position: absolute; left: calc(var(--m) / var(--timeline-months, 134) * 100%); white-space: nowrap; }
 .timeline-years span:last-child { transform: translateX(-100%); }
 
 .career { border-top: 1px solid var(--rule-strong); }
