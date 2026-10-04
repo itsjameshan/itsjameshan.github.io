@@ -382,14 +382,24 @@ figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); }
 .recognition-list span { font-size: 16px; color: var(--muted); }
 
 /* Role fit */
+.resume-card { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 24px clamp(24px, 3.5vw, 48px); margin-bottom: 20px; padding: clamp(22px, 2.6vw, 32px) clamp(22px, 3.4vw, 44px); border-radius: 26px; background: radial-gradient(ellipse at 12% 0%, rgba(159, 208, 194, .16), transparent 55%), var(--forest); color: var(--on-dark); }
+.resume-photo { width: clamp(120px, 11vw, 156px); }
+.resume-photo img { display: block; width: 100%; height: auto; aspect-ratio: 305 / 381; object-fit: cover; border: 5px solid var(--paper); border-radius: 14px; box-shadow: 0 22px 40px -24px rgba(0, 0, 0, .7); }
+.resume-id { display: grid; gap: 8px; }
+.resume-kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--mint); }
+.resume-name { font-family: var(--serif); font-size: clamp(32px, 3.4vw, 52px); line-height: 1.02; letter-spacing: -.03em; color: var(--on-dark); }
+.resume-meta { max-width: 34em; font-size: 15px; color: var(--on-dark-muted); }
+.resume-actions { display: grid; gap: 10px; justify-items: stretch; }
+.button-light { justify-content: space-between; background: var(--on-dark); color: var(--forest); }
+.button-light .button-meta { background: rgba(15, 58, 43, .1); }
+.button-light:hover { background: #fff; transform: translateY(-2px); }
+.button-outline-light { justify-content: space-between; border: 1px solid rgba(241, 235, 221, .35); color: var(--on-dark); }
+.button-outline-light:hover { border-color: var(--on-dark); transform: translateY(-2px); }
 .role-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(40px, 6vw, 96px); padding: clamp(28px, 4vw, 56px); border: 1px solid var(--rule); border-radius: 26px; background: var(--card); }
 .role-kicker { font-size: 12px; color: var(--teal); }
-.role-portrait { width: clamp(150px, 15vw, 210px); margin-bottom: 28px; }
-.role-portrait img { width: 100%; height: auto; aspect-ratio: 305 / 381; object-fit: cover; border-radius: 999px 999px 14px 14px; box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--rule), 0 26px 44px -30px rgba(10, 43, 32, .5); }
 .role-summary h3 { margin: 18px 0 22px; font-size: clamp(34px, 3.7vw, 56px); line-height: 1.04; letter-spacing: -.035em; color: var(--forest); }
 .role-summary h3 em { color: var(--teal); }
 #role-description { max-width: 32em; font-size: 17.5px; color: var(--ink-2); }
-.role-downloads { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .fit-evidence li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
 .fit-evidence li:first-child { padding-top: 0; }
 .fit-num { font-family: var(--serif); font-size: 22px; line-height: 1.2; color: var(--teal); }
@@ -493,6 +503,8 @@ figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); }
   .record-item:first-child { grid-column: 1 / -1; }
   .contact-inner { grid-template-columns: minmax(0, 1fr); }
   .contact-photo { max-width: 560px; }
+  .resume-card { grid-template-columns: auto minmax(0, 1fr); }
+  .resume-actions { grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-inner { grid-template-columns: minmax(0, 1fr); }
 }
 
@@ -552,7 +564,11 @@ figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); }
   .contact-photo img { border-radius: 16px; }
 
   .role-panel { padding: 24px 20px; border-radius: 20px; }
-  .role-downloads .button { width: 100%; justify-content: space-between; }
+  .resume-card { grid-template-columns: auto minmax(0, 1fr); padding: 20px; border-radius: 20px; }
+  .resume-photo { width: 96px; }
+  .resume-photo img { border-width: 4px; border-radius: 10px; }
+  .resume-meta { font-size: 13.5px; }
+  .resume-actions { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr); }
 
   .contact-art { right: -45%; width: 130vw; opacity: .35; }
   .contact-email { font-size: min(6.3vw, 30px); white-space: nowrap; }
@@ -571,7 +587,7 @@ figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); }
 }
 
 @media print {
-  .site-header, .hero-visual, .throughline, .window-controls, .contact-art, .contact-actions, .role-downloads, .chapter-figure, .timeline { display: none !important; }
+  .site-header, .hero-visual, .throughline, .window-controls, .contact-art, .contact-actions, .resume-actions, .chapter-figure, .timeline { display: none !important; }
   body, .method, .contact, .site-footer, .path, .ev, .role-panel { background: #fff !important; color: #000 !important; }
   .container { width: 100%; }
   .method-enhanced .chapters, .method-enhanced .chapter { display: block; }
