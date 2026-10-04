@@ -297,6 +297,9 @@ figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); }
 .case-feature .case-kicker { flex-basis: 100%; }
 .case-feature h3 { font-size: clamp(58px, 9vw, 150px); line-height: .88; letter-spacing: -.055em; color: var(--forest); }
 .case-standfirst { max-width: 18ch; padding-bottom: .4em; font-family: var(--serif); font-size: clamp(24px, 2.4vw, 36px); font-style: italic; line-height: 1.2; color: var(--teal); }
+.case-photo { margin-top: clamp(32px, 4vw, 48px); }
+.case-photo img { width: 100%; height: auto; aspect-ratio: 2.15 / 1; object-fit: cover; object-position: 50% 20%; border-radius: 22px; background: var(--paper-2); }
+.case-photo figcaption { margin-top: 12px; }
 .case-feature-body { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); margin-top: 48px; }
 .case-text p { max-width: 38em; font-size: 18px; color: var(--ink-2); }
 .case-text p + p { margin-top: 16px; }
@@ -369,6 +372,14 @@ figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); }
 .record-item strong { font-weight: 600; }
 .record-note { color: var(--muted) !important; }
 .record .link-arrow { font-size: 14px; overflow-wrap: anywhere; }
+.record-recognition { grid-column: 1 / -1; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); align-items: start; column-gap: clamp(28px, 4vw, 56px); }
+.record-recognition .record-label { grid-column: 1 / -1; }
+.record-photo img { width: 100%; height: auto; border-radius: 16px; background: var(--paper); }
+.record-photo figcaption { margin-top: 10px; }
+.recognition-list { display: grid; gap: 28px; padding-top: 8px; }
+.recognition-list li { display: grid; gap: 6px; padding-left: 20px; border-left: 2px solid var(--teal); }
+.recognition-list strong { font-family: var(--serif); font-size: clamp(26px, 2.4vw, 36px); font-weight: 400; line-height: 1.1; letter-spacing: -.02em; color: var(--forest); }
+.recognition-list span { font-size: 16px; color: var(--muted); }
 
 /* Role fit */
 .role-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(40px, 6vw, 96px); padding: clamp(28px, 4vw, 56px); border: 1px solid var(--rule); border-radius: 26px; background: var(--card); }
@@ -388,12 +399,14 @@ figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); }
 
 /* Contact */
 .contact { position: relative; padding: clamp(96px, 12vw, 160px) 0 clamp(80px, 10vw, 128px); overflow: hidden; background: var(--forest); color: var(--on-dark); }
-.contact-art { position: absolute; top: 50%; right: -14%; width: min(72vw, 920px); max-width: none; opacity: .5; transform: translateY(-50%); pointer-events: none; }
-.contact-inner { position: relative; }
-.contact h2 { max-width: 11ch; margin-top: 28px; font-size: clamp(52px, 8.4vw, 140px); line-height: .92; letter-spacing: -.05em; }
+.contact-art { position: absolute; top: 50%; right: -14%; width: min(72vw, 920px); max-width: none; opacity: .32; transform: translateY(-50%); pointer-events: none; }
+.contact-inner { position: relative; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .85fr); align-items: center; gap: clamp(40px, 6vw, 96px); }
+.contact-photo img { width: 100%; height: auto; border-radius: 22px; box-shadow: 0 0 0 1px rgba(241, 235, 221, .16), 0 40px 70px -40px rgba(0, 0, 0, .6); }
+.contact-photo figcaption { margin-top: 12px; color: var(--on-dark-muted); }
+.contact h2 { max-width: 11ch; margin-top: 28px; font-size: clamp(52px, 7vw, 116px); line-height: .92; letter-spacing: -.05em; }
 .contact h2 em { color: var(--mint); }
 .contact-dek { max-width: 34em; margin-top: 32px; font-size: clamp(18px, 1.5vw, 21px); color: var(--on-dark-muted); }
-.contact-email { display: inline-block; margin-top: 44px; font-family: var(--serif); font-size: clamp(28px, 4.2vw, 62px); line-height: 1.15; letter-spacing: -.03em; color: var(--on-dark); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .16em; text-decoration-color: rgba(159, 208, 194, .6); overflow-wrap: anywhere; transition: color .2s; }
+.contact-email { display: inline-block; margin-top: 44px; font-family: var(--serif); font-size: clamp(28px, 3.4vw, 52px); line-height: 1.15; letter-spacing: -.03em; color: var(--on-dark); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .16em; text-decoration-color: rgba(159, 208, 194, .6); overflow-wrap: anywhere; transition: color .2s; }
 .contact-email:hover { color: var(--mint); }
 .contact-email span { display: inline-block; margin-left: .25em; font-size: .7em; vertical-align: .15em; }
 .contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 36px; }
@@ -476,6 +489,8 @@ figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); }
   .career-text { grid-column: 2; }
   .record { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .record-item:first-child { grid-column: 1 / -1; }
+  .contact-inner { grid-template-columns: minmax(0, 1fr); }
+  .contact-photo { max-width: 560px; }
   .footer-inner { grid-template-columns: minmax(0, 1fr); }
 }
 
@@ -530,6 +545,9 @@ figcaption { font-size: 11px; line-height: 1.6; color: var(--muted); }
   .seg b { display: none; }
   .timeline-years span:nth-child(even):not(:last-child) { display: none; }
   .record { grid-template-columns: minmax(0, 1fr); margin-top: 56px; }
+  .record-recognition { grid-template-columns: minmax(0, 1fr); row-gap: 18px; }
+  .case-photo img { aspect-ratio: 4 / 3; object-position: 24% 30%; border-radius: 16px; }
+  .contact-photo img { border-radius: 16px; }
 
   .role-panel { padding: 24px 20px; border-radius: 20px; }
   .role-downloads .button { width: 100%; justify-content: space-between; }
