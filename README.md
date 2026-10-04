@@ -28,7 +28,7 @@ Every figure carries a caption stating whether it is illustrative, conceptual, o
 
 Résumé and role fit: https://itsjameshan.github.io/#fit. Legacy `?role=` links show the same modeling page.
 
-The website links one agronomic systems modeling résumé in PDF and Word, with the same CIBO date shown in the career timeline. Analytics résumé files are retained for future use but are not offered on the page. The public portrait is retained from the previous website (`avatar.jpg`, unchanged); `assets/portrait-hero.jpg` is the same photo at the same resolution with only the presentation-slide text behind the head smoothed out, used in the hero and social card. Source Serif 4 is distributed under the SIL Open Font License in `assets/OFL.txt`.
+The website links one agronomic systems modeling résumé in PDF and Word, with the same CIBO date shown in the career timeline. Analytics résumé files are retained for future use but are not offered on the page. The public portrait is retained from the previous website (`avatar.jpg`, unchanged); `assets/portrait-hero.jpg` is the same photo at the same resolution with only the presentation-slide text behind the head smoothed out, used in the hero and social card. Four professional photos appear on the page, each cropped, resized without upscaling and stripped of camera metadata: `assets/photo-cornsoywater-*.jpg` (CornSoyWater case file), `assets/photo-award.jpg` (Recognition), `assets/photo-portrait.jpg` (résumé card; the sponsor logo beside the head is painted out as plain backdrop) and `assets/photo-workshop.jpg` (Contact). Source Serif 4 is distributed under the SIL Open Font License in `assets/OFL.txt`.
 
 Public source records:
 
